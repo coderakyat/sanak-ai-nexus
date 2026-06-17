@@ -12,7 +12,7 @@ export const Route = createFileRoute("/case-studies")({
       {
         name: "description",
         content:
-          "Real distribution and warehousing operations transformed by SANAK.AI. Problem, approach, solution, results.",
+          "Real distribution and warehousing operations in Malaysia transformed by SANAK.AI. Three situations, three outcomes — evidence over assertion.",
       },
       { property: "og:title", content: "Case Studies — SANAK.AI" },
       {
@@ -30,53 +30,63 @@ export const Route = createFileRoute("/case-studies")({
 const cases = [
   {
     n: "001",
-    sector: "National FMCG distributor — 14 branches",
-    title: "From spreadsheet reconciliation to a single source of truth.",
+    sector: "FMCG Distributor — Selangor",
+    title: "From stockout surprises to real-time visibility.",
     img: case1,
-    problem:
-      "Three months of close cycles every quarter. Branch-level inventory disagreed with the central ledger by an average of 4.2%, and no two branches recorded movements the same way.",
-    approach:
-      "We installed the item master and inventory truth modules first. We froze new feature requests for ten weeks and concentrated on the data discipline that would underwrite every later module.",
-    solution:
-      "An event-sourced inventory state. Cycle counts as scheduled policy, not goodwill. Branch-level variance triaged with provenance, not opinion.",
+    situation:
+      "A Selangor-based FMCG distributor with 45 staff and around 800 active SKUs was managing inventory through a combination of Excel spreadsheets and daily WhatsApp updates from the warehouse team. Stock queries from the sales team required a chain of three to four messages before an answer came back — often 30 minutes to an hour after the question was asked. By that time, the customer had already called another supplier. Near-expiry products were only discovered during quarterly stocktakes. On two occasions in the preceding year, significant quantities of perishable goods had to be written off at a combined loss exceeding RM 40,000.",
+    changed: [
+      "Within 48 hours of going live, the sales team was querying stock directly from their phones during customer visits — real-time, without involving admin",
+      "The morning summary gave the owner daily visibility into expiry risk, stock positions, and transaction volume before 8am",
+      "The first near-expiry alert fired within the first week — flagging 45 cartons expiring in 8 days, giving the sales team time to clear it through a targeted promotion",
+      "Warehouse staff were using voice input for GRN recording within the first day, without a formal training session",
+    ],
+    outcome:
+      "The communication chain for stock queries was reduced from 3–4 steps to zero. Expiry management became proactive rather than reactive. The owner described it as the first time in eight years they could see what was happening in the business without calling anyone.",
     metrics: [
-      { v: "96%", l: "Reduction in phantom stock" },
-      { v: "11 wk", l: "From kickoff to single source of truth" },
-      { v: "−74%", l: "Branch reconciliation effort" },
+      { v: "< 48 hrs", l: "To full real-time visibility" },
+      { v: "RM 40k+", l: "Annual write-offs addressed" },
+      { v: "0", l: "Steps for sales stock queries" },
     ],
   },
   {
     n: "002",
-    sector: "Cold chain operator — three distribution centres",
-    title: "Allocation logic rebuilt around how the floor actually moves.",
+    sector: "Industrial Distributor — Johor",
+    title: "Solving the key person dependency problem.",
     img: case2,
-    problem:
-      "Order-to-dispatch was averaging 38 hours. Pickers were walking allocation paths designed for a layout that had been changed two years ago.",
-    approach:
-      "We re-modelled allocation against current pick paths and zone behaviour. We retired four legacy reports that were quietly being followed instead of the live system.",
-    solution:
-      "Warehouse execution module, with allocation, wave, and dispatch logic that respects real operational geometry — and that can be re-tuned by supervisors without re-implementation.",
+    situation:
+      "A Johor-based distributor of industrial parts and MRO supplies had grown to 65 staff across one main warehouse and two satellite locations. The operations manager — who had been with the company for eleven years — was the single point of knowledge for how the warehouse ran. Inventory positions, where items were stored, how exceptions were handled, which suppliers to call for urgent replenishment: it all lived in one person's head. When that person went on two weeks of medical leave, the warehouse throughput dropped by over 30% as staff constantly stopped to ask each other questions that should have been answerable by a system.",
+    changed: [
+      "Item location, batch information, and put-away logic were encoded into the system during onboarding",
+      "Adjustment approval thresholds were configured so that routine corrections could be processed by the admin team, while significant adjustments required owner sign-off — automatically",
+      "The returning operations manager found that new staff had adapted to the system's guidance rather than waiting for verbal instructions",
+    ],
+    outcome:
+      "The business now has documented operational knowledge that doesn't leave when one person goes on leave. The operations manager's role shifted from \"the person who knows everything\" to \"the person who oversees the system that knows everything\" — a shift they described as a significant improvement in their own working day.",
     metrics: [
-      { v: "9 hr", l: "New order-to-dispatch median" },
-      { v: "+22%", l: "Picker productivity" },
-      { v: "0", l: "Customer SLA breaches in pilot quarter" },
+      { v: "−30%+", l: "Throughput drop eliminated" },
+      { v: "1 system", l: "Replacing one indispensable person" },
+      { v: "Day 1", l: "New staff operational without verbal handoff" },
     ],
   },
   {
     n: "003",
-    sector: "Industrial parts distributor — multi-state",
-    title: "Financial close shortened from fifteen days to ten.",
+    sector: "Food & Beverage Distributor — Kuala Lumpur",
+    title: "Met full traceability requirements in two weeks.",
     img: case3,
-    problem:
-      "Every close required a forensic reconciliation between operations and finance. Adjustments were folklore, traceable to no event in particular.",
-    approach:
-      "We treated inventory as a ledger problem and built the master record to satisfy both functions. Adjustments became events with provenance, not entries.",
-    solution:
-      "Inventory truth as the substrate. Variance management with audited provenance. A close cycle that operations and finance can both defend on the same evidence.",
+    situation:
+      "A KL-based F&B distributor began onboarding a large supermarket chain as a new customer — a contract that came with strict traceability requirements. The retailer required confirmation of batch numbers and expiry dates for every inbound delivery, along with delivery audit trails for every outbound shipment. The distributor had no system that could provide this. Batch tracking was done manually on paper, and delivery records existed only as signed physical forms that were scanned and stored inconsistently.",
+    changed: [
+      "From day one of onboarding, every GRN captured batch number and expiry date as mandatory fields for perishable items",
+      "Every outbound shipment generated an electronic Delivery Order tied to specific batches, with FEFO enforcement ensuring the correct stock was picked",
+      "The full movement history — from supplier receipt to customer delivery — was queryable from a phone in seconds",
+    ],
+    outcome:
+      "The distributor was able to meet the retailer's traceability requirements within two weeks of going live on SANAK. What had seemed like a potentially disqualifying gap in their systems became a resolved capability. The contract proceeded.",
     metrics: [
-      { v: "5 days", l: "Earlier monthly close, consistently" },
-      { v: "99.6%", l: "Inventory accuracy at quarter-end" },
-      { v: "1", l: "Source of truth, finally" },
+      { v: "2 weeks", l: "From gap to full traceability compliance" },
+      { v: "100%", l: "Batch tracking from receipt to delivery" },
+      { v: "Secured", l: "Major retail contract that was at risk" },
     ],
   },
 ];
@@ -87,16 +97,16 @@ function CaseStudies() {
       <PageHeader
         eyebrow="[ Case studies / Field record ]"
         title={<>Evidence over assertion.</>}
-        intro="Three operations, three operating outcomes. The pattern is the same: install the discipline first, deploy the modules second, transfer ownership third."
+        intro="Three operations, three operating outcomes. Details have been adapted to protect commercial confidentiality, but the situations, the problems, and the results are real."
       />
 
       <div className="container-edge mx-auto max-w-[1600px]">
         {cases.map((c, i) => (
           <Reveal key={c.n} delay={i * 0.05}>
-            <article className="grid grid-cols-1 gap-12 border-b border-[color:var(--color-border)] py-24 md:grid-cols-12 md:gap-12 md:py-32">
+            <article className="group grid grid-cols-1 gap-12 border-b border-[color:var(--color-border)] py-24 md:grid-cols-12 md:gap-12 md:py-32">
               <div className="md:col-span-5">
                 <div className="sticky top-28">
-                  <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+                  <p className="editorial-eyebrow text-[color:var(--color-graphite-400)] transition-colors duration-500 group-hover:text-[color:var(--color-ink)]">
                     Case {c.n} · {c.sector}
                   </p>
                   <h2 className="mt-6 display-lg">{c.title}</h2>
@@ -107,39 +117,52 @@ function CaseStudies() {
                       loading="lazy"
                       width={1600}
                       height={1200}
-                      className="h-full w-full object-cover"
+                      className="h-full w-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-[1.03]"
                     />
+                  </div>
+                  {/* Metrics */}
+                  <div className="mt-8 grid grid-cols-3 gap-px bg-[color:var(--color-border-strong)]">
+                    {c.metrics.map((m) => (
+                      <div key={m.l} className="group/metric flex flex-col justify-center bg-[color:var(--color-paper)] p-4 transition-colors duration-500 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)]">
+                        <p className="font-display text-2xl md:text-3xl transition-transform duration-500 group-hover/metric:scale-105 origin-left">{m.v}</p>
+                        <p className="mt-2 text-[10px] uppercase tracking-widest text-[color:var(--color-graphite-400)] transition-colors duration-500 group-hover/metric:text-[color:var(--color-paper)]/70">
+                          {m.l}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
               <div className="md:col-span-7 md:pl-8">
                 <dl className="space-y-10">
-                  {[
-                    { k: "Problem", v: c.problem },
-                    { k: "Approach", v: c.approach },
-                    { k: "Solution", v: c.solution },
-                  ].map((row) => (
-                    <div key={row.k} className="border-t border-[color:var(--color-border-strong)] pt-6">
-                      <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                        {row.k}
-                      </dt>
-                      <dd className="mt-4 text-lg leading-relaxed text-[color:var(--color-graphite-200)]">
-                        {row.v}
-                      </dd>
-                    </div>
-                  ))}
+                  <div className="border-t border-[color:var(--color-border-strong)] pt-6">
+                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">The Situation</dt>
+                    <dd className="mt-4 text-lg leading-relaxed text-[color:var(--color-graphite-200)]">
+                      {c.situation}
+                    </dd>
+                  </div>
+                  <div className="border-t border-[color:var(--color-border-strong)] pt-6">
+                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">What changed with SANAK</dt>
+                    <dd className="mt-4">
+                      <ul className="space-y-4">
+                        {c.changed.map((item) => (
+                          <li key={item} className="group/bullet flex items-start gap-4 text-[color:var(--color-graphite-200)]">
+                            <div className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm bg-[color:var(--color-border-strong)] transition-colors duration-300 group-hover/bullet:bg-[color:var(--color-ink)]">
+                               <span className="font-mono text-[10px] text-[color:var(--color-paper)] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100">✓</span>
+                            </div>
+                            <span className="text-lg leading-relaxed transition-colors duration-300 group-hover/bullet:text-[color:var(--color-ink)] text-[color:var(--color-graphite-300)]">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </dd>
+                  </div>
+                  <div className="border-t border-[color:var(--color-border-strong)] pt-6">
+                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">The Outcome</dt>
+                    <dd className="mt-4 font-display text-xl leading-snug text-[color:var(--color-graphite-200)]">
+                      {c.outcome}
+                    </dd>
+                  </div>
                 </dl>
-
-                <div className="mt-12 grid grid-cols-3 gap-px bg-[color:var(--color-border-strong)]">
-                  {c.metrics.map((m) => (
-                    <div key={m.l} className="bg-[color:var(--color-paper)] p-6">
-                      <p className="font-display text-4xl md:text-5xl">{m.v}</p>
-                      <p className="mt-2 text-xs uppercase tracking-widest text-[color:var(--color-graphite-400)]">
-                        {m.l}
-                      </p>
-                    </div>
-                  ))}
-                </div>
               </div>
             </article>
           </Reveal>
@@ -153,7 +176,7 @@ function CaseStudies() {
             to="/contact"
             className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
           >
-            Speak with us →
+            Book a Demo →
           </Link>
         </div>
       </section>

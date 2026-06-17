@@ -3,6 +3,7 @@ import { SiteShell } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { VoiceDemoOverlay } from "@/components/site/VoiceDemoOverlay";
 import { InteractiveCapabilities } from "@/components/site/InteractiveCapabilities";
+import { Marquee } from "@/components/site/Marquee";
 import heroWarehouse from "@/assets/hero-warehouse.jpg";
 import brandStatement from "@/assets/brand-statement.jpg";
 import case1 from "@/assets/case-1.jpg";
@@ -12,20 +13,20 @@ import insight1 from "@/assets/insight-1.jpg";
 import insight2 from "@/assets/insight-2.jpg";
 import insight3 from "@/assets/insight-3.jpg";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/")(({
   head: () => ({
     meta: [
-      { title: "SANAK.AI — SCM software for distributors who need operational truth" },
+      { title: "SANAK.AI — Conversational SCM for Mid-Market Distributors" },
       {
         name: "description",
         content:
-          "SANAK.AI builds a modular supply chain platform for distributors and warehousing operations. Inventory clarity. Order flow. Operational truth.",
+          "SANAK is the conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia. Ask it anything. Tell it what you're doing. It handles the rest.",
       },
-      { property: "og:title", content: "SANAK.AI — SCM software for distributors" },
+      { property: "og:title", content: "SANAK.AI — Conversational SCM for Mid-Market Distributors" },
       {
         property: "og:description",
         content:
-          "A modular supply chain platform built for distributors and warehousing operations.",
+          "A conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia.",
       },
       { property: "og:url", content: "/" },
       { property: "og:image", content: heroWarehouse },
@@ -34,28 +35,61 @@ export const Route = createFileRoute("/")({
     links: [{ rel: "canonical", href: "/" }],
   }),
   component: Home,
-});
+}));
 
-const services = [
-  { n: "01", t: "Inventory visibility", d: "Know exactly what's on your racks. No more phantom stock or frantic WhatsApp checks." },
-  { n: "02", t: "Order fulfillment", d: "From order received to loaded on the truck, without missing a beat or duplicating an entry." },
-  { n: "03", t: "Warehouse control", d: "Receive, putaway, and pick with a system that actually matches how your floor workers move." },
-  { n: "04", t: "Expiry management", d: "Catch expiring goods before they turn into write-offs. Enforce First-Expired-First-Out automatically." },
+const valueProps = [
+  {
+    n: "01",
+    t: "Real-Time Inventory Visibility",
+    d: "Know exactly what you have, where it is, and when it expires — without calling anyone or waiting for a report. Query by voice or text, get answers in seconds.",
+  },
+  {
+    n: "02",
+    t: "Voice-First for Field Workers",
+    d: "Your warehouse staff shouldn't need a laptop or training to update a system. SANAK works the way they already communicate — speak naturally, get the right input captured instantly.",
+  },
+  {
+    n: "03",
+    t: "Audit Trail, Automatically",
+    d: "Every receiving, every outbound, every stock adjustment is logged with who did it, when, and why. No more guessing when something doesn't add up.",
+  },
 ];
 
+const stats = [
+  { v: "< 1 day", l: "to go live — full onboarding in a single working day" },
+  { v: "2 sec", l: "average response time for stock queries" },
+  { v: "Zero", l: "IT department required" },
+  { v: "5", l: "modules covering inventory, procurement, sales, logistics, and delivery" },
+];
 
+const industries = [
+  "FMCG Distribution",
+  "Pharmaceutical Distribution",
+  "Industrial & MRO",
+  "Consumer Goods",
+  "Building Materials",
+  "Food & Beverage",
+];
 
 const projects = [
-  { img: case1, eyebrow: "Jaringan Distribusi FMCG 24 Cabang di Jawa", title: "Stopped stockouts and cleared phantom inventory", outcome: "Moved from 14 messy spreadsheets to a single, trusted stock list in weeks." },
-  { img: case2, eyebrow: "Jaringan Cold Chain 5.000 sqm di Surabaya", title: "Orders out the door 4x faster", outcome: "Workers stopped searching for items. The system tells them exactly where to go." },
-  { img: case3, eyebrow: "Distributor Suku Cadang Industri Nasional", title: "Caught RM 2,000 in near-expired goods weekly", outcome: "Automated alerts replaced manual stock checks, saving thousands in write-offs." },
-];
-
-const method = [
-  { n: "01", t: "Start on the floor", d: "We spend time in your warehouse before we look at any screens. We build for the people doing the work." },
-  { n: "02", t: "Clean the item list", d: "We establish a single, clean list of items. A messy stock list means a messy operation." },
-  { n: "03", t: "Deploy the most painful part", d: "We launch the feature that solves your biggest headache first, so your team feels the value immediately." },
-  { n: "04", t: "Hand over the keys", d: "We train your people to own the system natively. Software that workers don't use is software that dies." },
+  {
+    img: case1,
+    eyebrow: "FMCG Distributor — Selangor",
+    title: "Stopped stockouts and cleared phantom inventory",
+    outcome: "Sales team queries stock in real time during customer visits. First expiry alert fired within the first week.",
+  },
+  {
+    img: case2,
+    eyebrow: "Industrial Distributor — Johor",
+    title: "Solved the key person dependency problem",
+    outcome: "Operational knowledge encoded into the system. The operation runs on the system, not on any one person.",
+  },
+  {
+    img: case3,
+    eyebrow: "F&B Distributor — Kuala Lumpur",
+    title: "Met full traceability requirements in two weeks",
+    outcome: "Batch tracking from supplier receipt to customer delivery, queryable from a phone in seconds.",
+  },
 ];
 
 const insights = [
@@ -73,14 +107,22 @@ function Home() {
           <div className="md:col-span-7 md:pr-8">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
-                [ SCM software · Est. operations ]
+                [ SCM software for Mid-Market Distributors ]
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <h1 className="mt-10 display-hero">
-                The warehouse system <br /> that runs on conversation. <br />
+                Your Supply Chain,{" "}
+                <br />
+                Spoken Into Existence.{" "}
+                <br />
                 <span className="text-[color:var(--color-graphite-500)]">No IT team required.</span>
               </h1>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-graphite-400)]">
+                The conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia. Ask it anything. Tell it what you're doing. It handles the rest — in real time, from your phone.
+              </p>
             </Reveal>
             <Reveal delay={0.25}>
               <div className="mt-12 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-6">
@@ -88,13 +130,13 @@ function Home() {
                   to="/contact"
                   className="bg-[color:var(--color-paper)] px-7 py-4 editorial-eyebrow text-[color:var(--color-ink)] transition-opacity hover:opacity-80"
                 >
-                  Request a demo
+                  Book a Demo
                 </Link>
                 <Link
                   to="/solutions"
                   className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
                 >
-                  Explore the platform
+                  See How It Works
                 </Link>
               </div>
             </Reveal>
@@ -118,7 +160,30 @@ function Home() {
             </div>
           </Reveal>
         </div>
+      </section>
 
+      {/* PROBLEM BANNER */}
+      <section className="border-b border-[color:var(--color-border)] bg-[color:var(--color-paper-2)]">
+        <div className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
+          <Reveal>
+            <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+              [ The Problem We Solve ]
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="mt-8 max-w-4xl font-display text-2xl leading-relaxed text-[color:var(--color-graphite-200)] md:text-3xl">
+              Mid-market distributors in Malaysia and Singapore are running real businesses — moving real inventory, coordinating real teams — on Excel, WhatsApp, and verbal handoffs. Not because they don't want better tools. Because every SCM system ever built assumed they had an IT department, a long implementation runway, and a warehouse team that can sit through training.
+            </p>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="mt-12 border-l-4 border-[color:var(--color-ink)] pl-6 md:pl-10">
+              <p className="font-display text-3xl leading-snug text-[color:var(--color-ink)] md:text-5xl">
+                SANAK was built for the gap <br className="hidden md:block" />
+                that everyone else ignored.
+              </p>
+            </div>
+          </Reveal>
+        </div>
       </section>
 
       {/* BRAND STATEMENT */}
@@ -161,33 +226,30 @@ function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* VALUE PROPS */}
       <section className="bg-[color:var(--color-paper-2)]">
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-12">
             <div className="md:col-span-4">
               <Reveal>
                 <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                  [ Services / 02 ]
+                  [ Why SANAK / 02 ]
                 </p>
                 <h2 className="mt-8 display-lg">
-                  Four surfaces. <br /> One platform.
+                  Three things that change everything.
                 </h2>
                 <p className="mt-8 max-w-md text-[color:var(--color-graphite-300)]">
-                  Each module stands alone and composes with the others. Land where the
-                  hurt is greatest. Expand on your terms.
+                  Each module stands alone and composes with the others. Land where the hurt is greatest. Expand on your terms.
                 </p>
               </Reveal>
             </div>
             <div className="md:col-span-8">
-              <div className="grid grid-cols-1 sm:grid-cols-2">
-                {services.map((s, i) => (
+              <div className="grid grid-cols-1 sm:grid-cols-1">
+                {valueProps.map((s, i) => (
                   <Reveal
                     key={s.n}
                     delay={i * 0.06}
-                    className={`group border-t border-[color:var(--color-border-strong)] p-8 transition-colors hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)] sm:p-10 ${
-                      i % 2 === 0 ? "sm:border-r" : ""
-                    } ${i >= services.length - 2 ? "sm:border-b-0" : ""}`}
+                    className="group border-t border-[color:var(--color-border-strong)] p-8 transition-colors hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)] sm:p-10"
                   >
                     <p className="editorial-eyebrow text-[color:var(--color-graphite-400)] group-hover:text-[color:var(--color-graphite-500)]">
                       {s.n}
@@ -206,8 +268,24 @@ function Home() {
         </div>
       </section>
 
-      {/* CAPABILITIES */}
+      {/* STATS */}
       <section className="border-y border-[color:var(--color-border)]">
+        <div className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
+          <div className="grid grid-cols-2 gap-px bg-[color:var(--color-border-strong)] md:grid-cols-4">
+            {stats.map((s, i) => (
+              <Reveal key={s.v} delay={i * 0.06}>
+                <div className="group relative flex h-full flex-col justify-center bg-[color:var(--color-paper)] p-8 transition-colors duration-500 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)] md:p-10">
+                  <p className="font-display text-4xl md:text-5xl transition-transform duration-500 group-hover:scale-105 origin-left">{s.v}</p>
+                  <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-graphite-400)] uppercase tracking-widest transition-colors duration-500 group-hover:text-[color:var(--color-paper)]/70">{s.l}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section className="border-b border-[color:var(--color-border)]">
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
           <InteractiveCapabilities />
         </div>
@@ -219,7 +297,7 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
-                [ Featured / 04 ]
+                [ Case Studies / 04 ]
               </p>
               <h2 className="mt-6 display-xl max-w-[18ch]">
                 Evidence over assertion.
@@ -260,44 +338,24 @@ function Home() {
         </div>
       </section>
 
-      {/* METHODOLOGY */}
-      <section className="border-b border-[color:var(--color-border)] bg-[color:var(--color-paper)]">
-        <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
-            <div className="md:col-span-4">
-              <Reveal>
-                <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                  [ Methodology / 05 ]
-                </p>
-                <h2 className="mt-8 display-lg">How we work.</h2>
-                <p className="mt-8 max-w-sm text-[color:var(--color-graphite-300)]">
-                  A four-part operating discipline. Linear, deliberate, transferable.
-                </p>
-              </Reveal>
-            </div>
-            <div className="md:col-span-8">
-              <div className="grid gap-6 sm:grid-cols-2">
-                {method.map((m, i) => (
-                  <Reveal key={m.n} delay={i * 0.06}>
-                    <div className="border border-[color:var(--color-border-strong)] p-8 md:p-10">
-                      <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                        {m.n}
-                      </p>
-                      <h3 className="mt-6 font-display text-2xl">{m.t}</h3>
-                      <p className="mt-4 text-sm leading-relaxed text-[color:var(--color-graphite-300)]">
-                        {m.d}
-                      </p>
-                    </div>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-          </div>
+      {/* INDUSTRIES */}
+      <section className="border-y border-[color:var(--color-border)] bg-[color:var(--color-paper-2)] overflow-hidden">
+        <div className="container-edge mx-auto max-w-[1600px] pt-16 pb-8 md:pt-20 md:pb-10">
+          <Reveal>
+            <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+              [ Industries we serve ]
+            </p>
+          </Reveal>
         </div>
+        <Reveal delay={0.1}>
+          <div className="mb-10 md:mb-16">
+            <Marquee items={industries} />
+          </div>
+        </Reveal>
       </section>
 
       {/* INSIGHTS */}
-      <section className="border-y border-[color:var(--color-border)]">
+      <section className="border-b border-[color:var(--color-border)]">
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <Reveal>
@@ -337,6 +395,26 @@ function Home() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* BOTTOM CTA */}
+      <section className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)]">
+        <div className="container-edge mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-8 py-24 md:flex-row md:items-end">
+          <Reveal>
+            <h2 className="display-xl max-w-[20ch]">Ready to see it in action?</h2>
+            <p className="mt-6 max-w-md text-lg text-[color:var(--color-graphite-400)]">
+              Book a 30-minute demo. We'll show you SANAK running on real data, for an operation that looks like yours.
+            </p>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <Link
+              to="/contact"
+              className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
+            >
+              Book a Demo →
+            </Link>
+          </Reveal>
         </div>
       </section>
     </SiteShell>

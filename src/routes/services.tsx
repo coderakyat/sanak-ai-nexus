@@ -9,13 +9,13 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "SANAK.AI delivers a modular SCM platform, implementation, onboarding, and operational advisory for distributors and warehousing operations.",
+          "SANAK delivers a modular SCM platform covering inventory, procurement, order management, outbound logistics, and field sales execution — all through a conversational, voice-first interface.",
       },
       { property: "og:title", content: "Services — SANAK.AI" },
       {
         property: "og:description",
         content:
-          "Platform, implementation, onboarding, and advisory — composed around the operations that hold distribution together.",
+          "Five modules. One conversational interface. Your team learns one way of working, and it applies everywhere.",
       },
       { property: "og:url", content: "/services" },
     ],
@@ -24,56 +24,101 @@ export const Route = createFileRoute("/services")({
   component: Services,
 });
 
-const services = [
+const modules = [
   {
     n: "01",
-    t: "Platform",
-    headline: "The SANAK operating system.",
-    d: "A complete toolkit for distribution that actually works on the floor. Covers inventory, orders, warehouse movement, and procurement—all designed to be used by voice and natural chat.",
+    t: "Inventory Management",
+    headline: "The core. The entry point. The foundation.",
+    d: "Real-time inventory visibility is the most universally felt pain across distributors and warehouse operators. SANAK's Inventory Management module solves it completely — and makes everything else possible.",
     bullets: [
-      "Conversational interface (Voice and Text)",
-      "Centralized Item & Partner list",
-      "Live inventory tracking and expiry alerts",
-      "Floor operations (Receive, Pick, Pack, Dispatch)",
-      "Real-time visibility for the management office",
+      "Real-time stock queries by item, location, batch, or expiry window",
+      "Goods Receipt Note (GRN) capture via voice or text — no forms, no laptops",
+      "Outbound recording with automatic FEFO (First Expired, First Out) enforcement",
+      "Stock adjustments with configurable approval thresholds and owner sign-off",
+      "Full, immutable movement history — every transaction recorded with who, when, and why",
+      "Expiry alert system: automated notifications at 60, 30, 14, and 7 days before expiry, with estimated financial value at risk",
+      "Daily morning summary delivered automatically to owners and managers",
     ],
   },
   {
     n: "02",
-    t: "Implementation",
-    headline: "Live in weeks, not months.",
-    d: "We don't do massive, disruptive IT projects. We identify your most painful bottleneck—like missing stock or delayed orders—and deploy the solution for that specific area first.",
+    t: "Procurement Management",
+    headline: "Connect demand signals to purchasing.",
+    d: "Eliminate the guesswork from replenishment decisions and create a structured, traceable path from purchase requisition to goods receipt. No more reactive, gut-feel ordering.",
     bullets: [
-      "Warehouse floor walkthrough & diagnosis",
-      "Cleaning and migrating your messy Excel data",
-      "Deploying the highest-value module first",
-      "Connecting to your existing accounting tools if needed",
-      "Expanding to other areas when your team is ready",
+      "Purchase Order creation and supplier management",
+      "Inbound shipment tracking and Advance Shipment Notice handling",
+      "Three-way matching: PO, goods receipt, and supplier invoice reconciliation",
+      "Supplier performance visibility",
+      "Automatic reorder point alerts and replenishment signal generation",
     ],
   },
   {
     n: "03",
-    t: "Onboarding",
-    headline: "Zero training required.",
-    d: "Because SANAK runs on natural conversation, your warehouse staff already know how to use it. If they can use WhatsApp, they can run your warehouse operations on day one.",
+    t: "Order Management",
+    headline: "From customer order to confirmed delivery.",
+    d: "Structured, traceable, and fully connected to your live inventory position. No more orders buried in WhatsApp, no more commitment without visibility.",
     bullets: [
-      "No thick training manuals or classroom sessions",
-      "Workers use their own language and terminology",
-      "Supervisors shift from data-entry to actual managing",
-      "Quarterly check-ins to ensure you're getting value",
+      "Sales Order creation and validation",
+      "Real-time ATP (Available-to-Promise) checking against live inventory",
+      "Credit limit and payment terms enforcement",
+      "Backorder management and customer communication",
+      "Delivery scheduling and route assignment",
     ],
   },
   {
     n: "04",
-    t: "Advisory",
-    headline: "Fixing the physical operation.",
-    d: "Software only solves half the problem. If your physical warehouse layout is broken, we help you fix that too, drawing from our team's deep experience running real distribution centers.",
+    t: "Outbound Logistics & Delivery",
+    headline: "A system that works in the real world.",
+    d: "Give your drivers and delivery coordinators a system that works on the road, on a phone, in a moving vehicle — not one built for a desk-bound operator.",
     bullets: [
-      "Warehouse layout and shelf organization",
-      "Inventory policies (What to stock, what to drop)",
-      "Streamlining the physical pick path",
-      "Reducing manual touches and double-handling",
+      "Delivery manifest generation and route planning",
+      "Driver briefing and dispatch coordination",
+      "Real-time delivery status updates",
+      "Electronic Proof of Delivery (ePOD) capture with customer signature",
+      "Exception handling for failed deliveries, partial deliveries, and returns",
+      "Delivery reconciliation back to the warehouse and billing system",
     ],
+  },
+  {
+    n: "05",
+    t: "Sales Field Execution",
+    headline: "Sell confidently without calling the warehouse.",
+    d: "Your sales representatives shouldn't need to call the warehouse to confirm availability before committing to a customer. Give them instant access to the information they need, wherever they are.",
+    bullets: [
+      "Real-time stock availability queries — by item, batch, location, or expiry",
+      "On-site order creation from the customer's location",
+      "Delivery commitment with ATP confirmation",
+      "Customer-facing visibility without exposing internal system data",
+      "Route history and visit coordination",
+    ],
+  },
+];
+
+const platformCaps = [
+  {
+    t: "Voice-First Interface",
+    d: "The default mode of interaction is voice. Field workers speak naturally — \"received 50 cartons of Milo from Supplier Budi, batch M2024-12, expiring June 2026\" — and the system captures, validates, and confirms. No typing, no menus, no forms.",
+  },
+  {
+    t: "Mobile-Native",
+    d: "Built for Android and iOS. Works on mid-range devices. Requires only a smartphone and an internet connection. No hardware investments needed.",
+  },
+  {
+    t: "Multi-Language Support",
+    d: "Fully operational in Bahasa Malaysia and English, including natural code-switching between both — reflecting the way teams in Malaysia and Singapore actually communicate.",
+  },
+  {
+    t: "Role-Based Access Control",
+    d: "Every user sees and can do exactly what their role permits — nothing more, nothing less. Configurable per tenant.",
+  },
+  {
+    t: "Immutable Audit Trail",
+    d: "Every write operation — every receiving, every outbound, every adjustment — is permanently recorded with the user, timestamp, and document reference. Uneditable. Always findable.",
+  },
+  {
+    t: "Tenant Data Isolation",
+    d: "Your data is yours. Completely isolated from other customers at the database level. Encrypted in transit and at rest.",
   },
 ];
 
@@ -81,21 +126,22 @@ function Services() {
   return (
     <SiteShell>
       <PageHeader
-        eyebrow="[ Services / Scope ]"
-        title={<>Four scopes. <br /> One operating discipline.</>}
-        intro="We offer the platform, the implementation that lands it, the onboarding that transfers it, and the advisory that sharpens it. Engagements are sequenced to release value early and compound over time."
+        eyebrow="[ Services / Modules ]"
+        title={<>Five modules. <br /> One platform.</>}
+        intro="SANAK delivers a modular SCM platform that grows with your operation. Each module addresses a specific domain of your supply chain, and they all share the same conversational interface — meaning your team learns one way of working, and it applies everywhere."
       />
 
+      {/* MODULES */}
       <section className="container-edge mx-auto max-w-[1600px]">
         <div className="divide-y divide-[color:var(--color-border-strong)]">
-          {services.map((s, i) => (
+          {modules.map((s, i) => (
             <Reveal key={s.n} delay={i * 0.04}>
-              <article className="grid grid-cols-1 gap-10 py-20 md:grid-cols-12 md:gap-12 md:py-28">
+              <article className="group grid grid-cols-1 gap-10 py-20 transition-colors duration-500 hover:bg-[color:var(--color-paper-2)]/50 md:grid-cols-12 md:gap-12 md:px-8 md:-mx-8 md:py-28">
                 <div className="md:col-span-4">
-                  <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+                  <p className="editorial-eyebrow text-[color:var(--color-graphite-400)] transition-colors duration-500 group-hover:text-[color:var(--color-ink)]">
                     {s.n} · {s.t}
                   </p>
-                  <h2 className="mt-6 display-lg">{s.headline}</h2>
+                  <h2 className="mt-6 display-lg transition-transform duration-500 group-hover:translate-x-1">{s.headline}</h2>
                 </div>
                 <div className="md:col-span-8 md:pl-8">
                   <p className="text-lg leading-relaxed text-[color:var(--color-graphite-300)] md:text-xl">
@@ -105,12 +151,12 @@ function Services() {
                     {s.bullets.map((b) => (
                       <li
                         key={b}
-                        className="flex items-start gap-4 border-t border-[color:var(--color-border)] pt-4 text-sm"
+                        className="group/bullet flex items-start gap-4 border-t border-[color:var(--color-border)] pt-4 text-sm"
                       >
-                        <span className="font-mono text-[color:var(--color-graphite-400)]">
-                          —
-                        </span>
-                        <span>{b}</span>
+                        <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm bg-[color:var(--color-border-strong)] transition-colors duration-300 group-hover/bullet:bg-[color:var(--color-ink)]">
+                           <span className="font-mono text-[10px] text-[color:var(--color-paper)] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100">✓</span>
+                        </div>
+                        <span className="transition-colors duration-300 group-hover/bullet:text-[color:var(--color-ink)] text-[color:var(--color-graphite-300)]">{b}</span>
                       </li>
                     ))}
                   </ul>
@@ -118,6 +164,31 @@ function Services() {
               </article>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* PLATFORM CAPABILITIES */}
+      <section className="border-y border-[color:var(--color-border)] bg-[color:var(--color-paper-2)]">
+        <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-36">
+          <Reveal>
+            <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+              [ Platform Capabilities ]
+            </p>
+            <h2 className="mt-6 display-xl max-w-[20ch]">Built across every module.</h2>
+            <p className="mt-6 max-w-xl text-[color:var(--color-graphite-300)]">
+              These capabilities are not add-ons. They are foundational to how SANAK works, available across every module from day one.
+            </p>
+          </Reveal>
+          <div className="mt-16 grid grid-cols-1 gap-px bg-[color:var(--color-border-strong)] sm:grid-cols-2 lg:grid-cols-3">
+            {platformCaps.map((c, i) => (
+              <Reveal key={c.t} delay={i * 0.05}>
+                <div className="group flex h-full flex-col bg-[color:var(--color-paper-2)] p-8 transition-colors duration-500 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)] md:p-10">
+                  <h3 className="font-display text-2xl">{c.t}</h3>
+                  <p className="mt-4 text-sm leading-relaxed text-[color:var(--color-graphite-300)] transition-colors duration-500 group-hover:text-[color:var(--color-paper)]/70">{c.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -130,7 +201,7 @@ function Services() {
             to="/contact"
             className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
           >
-            Speak with us →
+            Book a Demo →
           </Link>
         </div>
       </section>
