@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
-import t1 from "@/assets/team-1.jpg";
-import t2 from "@/assets/team-2.jpg";
-import t3 from "@/assets/team-3.jpg";
-import t4 from "@/assets/team-4.jpg";
+import imgCeo from "@/assets/ceo.jpeg";
+import imgCpo from "@/assets/cpo.jpeg";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -30,28 +28,22 @@ export const Route = createFileRoute("/team")({
 
 const people = [
   {
-    img: t1,
-    name: "Arman Setiawan",
-    role: "Co-founder · Chief Executive",
-    bio: "Fifteen years building and operating distribution networks across South-East Asia. Operates on the principle that no software thrives in a business that does not understand its own floor.",
+    img: imgCeo,
+    name: "Hanif Alfa Rizky",
+    role: "Co-founder · CEO",
+    bio: "Bertanggung jawab atas strategi perusahaan, arsitektur pendapatan, dan pertumbuhan bisnis. Mengelola akuisisi pelanggan tingkat enterprise, kemitraan strategis, serta memastikan arah produk selalu sejalan dengan kebutuhan bisnis supply chain.",
   },
   {
-    img: t2,
-    name: "Maya Hartono",
-    role: "Co-founder · Chief Product",
-    bio: "Former product lead at two enterprise SCM vendors. Joined SANAK to build a platform that respects the operator's time and rejects the demo as a deliverable.",
+    img: imgCpo,
+    name: "Fakhrel Aziz Maarif",
+    role: "Co-founder · CPO",
+    bio: "Memimpin pengembangan produk dari penemuan masalah hingga solusi siap pakai. Merancang antarmuka dan alur kerja (UX) yang sangat mudah dioperasikan oleh pekerja lapangan, memastikan perangkat lunak menjembatani operasi gudang fisik dengan data digital secara mulus.",
   },
   {
-    img: t3,
-    name: "Daniel Iskandar",
-    role: "Co-founder · Chief Technology",
-    bio: "Distributed-systems engineer who has spent more time in warehouses than at conferences. Author of the SANAK event model and its master-data architecture.",
-  },
-  {
-    img: t4,
-    name: "Lila Anwar",
-    role: "Head of Operations Practice",
-    bio: "Twelve years in supply chain consulting for mid-market distributors. Leads the implementation practice and the operational diagnosis that opens every engagement.",
+    img: null,
+    name: "Said Fairuz Zacky",
+    role: "Co-founder · CTO",
+    bio: "Mengendalikan arsitektur teknis, keamanan, dan skalabilitas platform. Memimpin tim *engineering* dalam merilis fitur dan memastikan proses integrasi dengan sistem klien (ERP/WMS eksisting) berjalan lancar tanpa membebani tim IT internal mereka.",
   },
 ];
 
@@ -72,28 +64,32 @@ function Team() {
       />
 
       <section className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
-        <div className="grid grid-cols-1 gap-px bg-[color:var(--color-border-strong)] md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-px bg-[color:var(--color-border-strong)] lg:grid-cols-3">
           {people.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.05}>
-              <article className="flex h-full flex-col bg-[color:var(--color-paper)] p-8 md:flex-row md:gap-10 md:p-12">
-                <div className="aspect-[4/5] w-full overflow-hidden border border-[color:var(--color-border)] md:w-2/5">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    width={1024}
-                    height={1280}
-                    className="h-full w-full object-cover grayscale"
-                  />
+              <article className="flex h-full flex-col bg-[color:var(--color-paper)] p-8 md:p-10 lg:p-12">
+                <div className="aspect-[4/5] w-full overflow-hidden border border-[color:var(--color-border)] bg-[color:var(--color-paper-2)] flex items-center justify-center">
+                  {p.img ? (
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      loading="lazy"
+                      width={1024}
+                      height={1280}
+                      className="h-full w-full object-cover"
+                    />
+                  ) : (
+                    <span className="editorial-eyebrow text-[color:var(--color-graphite-400)]">Photo Unavailable</span>
+                  )}
                 </div>
-                <div className="mt-6 md:mt-0 md:flex-1">
+                <div className="mt-8 flex-1">
                   <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
                     {p.role}
                   </p>
-                  <h2 className="mt-4 font-display text-3xl leading-tight md:text-4xl">
+                  <h2 className="mt-4 font-display text-3xl leading-tight">
                     {p.name}
                   </h2>
-                  <p className="mt-6 text-[color:var(--color-graphite-300)]">{p.bio}</p>
+                  <p className="mt-5 text-[color:var(--color-graphite-300)]">{p.bio}</p>
                 </div>
               </article>
             </Reveal>

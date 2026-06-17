@@ -10,7 +10,7 @@ export function SiteFooter() {
             <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
               [ Closing statement ]
             </p>
-            <h2 className="mt-6 font-display text-4xl font-light leading-[0.95] md:text-6xl">
+            <h2 className="mt-6 font-display text-4xl leading-[0.95] md:text-6xl">
               Operational truth. <br /> Engineered for distribution.
             </h2>
             <Link
@@ -29,7 +29,6 @@ export function SiteFooter() {
               <ul className="mt-5 space-y-3 text-sm">
                 <li><Link to="/about" className="hover:underline">About</Link></li>
                 <li><Link to="/team" className="hover:underline">Team</Link></li>
-                <li><Link to="/careers" className="hover:underline">Careers</Link></li>
                 <li><Link to="/insights" className="hover:underline">Insights</Link></li>
               </ul>
             </div>

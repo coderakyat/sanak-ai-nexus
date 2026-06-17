@@ -50,7 +50,7 @@ function About() {
               loading="lazy"
               width={1920}
               height={1080}
-              className="h-full w-full object-cover grayscale"
+              className="h-full w-full object-cover"
             />
           </div>
         </Reveal>
@@ -59,11 +59,9 @@ function About() {
             <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
               [ Mission ]
             </p>
-            <h2 className="mt-6 display-lg">Restore truth to the operation.</h2>
+            <h2 className="mt-6 display-lg">Stop the operational chaos.</h2>
             <p className="mt-8 text-[color:var(--color-graphite-300)]">
-              Distribution has been over-served by reporting tools and under-served by
-              operational systems. We exist to invert that asymmetry — to give distributors
-              a platform that runs the business, not one that merely describes it.
+              Most distributors run on WhatsApp, Excel, and the memory of one or two senior staff. When they resign, the operation breaks. We exist to fix that—to give you a system that runs the business without requiring an IT team.
             </p>
           </Reveal>
         </div>
@@ -75,22 +73,22 @@ function About() {
             {
               n: "01",
               t: "Vision",
-              d: "A category of distribution operations where inventory is provable, orders are deterministic, and the floor and the ledger never disagree.",
+              d: "Every distributor runs their supply chain with full visibility and control—no matter how big or small their team is.",
             },
             {
               n: "02",
               t: "Philosophy",
-              d: "Software is a discipline. We build slowly, in public, with operators in the room. We refuse features that look correct and behave incorrectly.",
+              d: "Start from the floor, not the boardroom. If the warehouse staff can't use it naturally from day one, we haven't solved the problem.",
             },
             {
               n: "03",
               t: "Product logic",
-              d: "One master record. One event stream. One platform that composes outward. Modules earn their place by improving the operation, not the demo.",
+              d: "Conversational at the front. ERP-grade at the back. Intelligence belongs in the system, not in people's heads.",
             },
             {
               n: "04",
               t: "Team ethos",
-              d: "We hire operators and engineers in equal measure. The best products are built by people who would still notice the problem if no software existed.",
+              d: "We don't mistake complexity for capability. Simple to use is the hardest thing to build, and we demand simplicity.",
             },
           ].map((b, i) => (
             <Reveal key={b.n} delay={i * 0.05} className="md:col-span-6">
@@ -114,15 +112,15 @@ function About() {
               <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
                 [ Operating principles ]
               </p>
-              <h2 className="mt-6 display-xl">Restraint over ornament.</h2>
+              <h2 className="mt-6 display-xl">Practical over sophisticated.</h2>
             </Reveal>
             <Reveal delay={0.1}>
               <ul className="mt-12 space-y-6 text-lg">
                 {[
-                  "We default to evidence. A claim without an event is a guess.",
-                  "We refuse complexity that does not earn its keep.",
-                  "We build product, not service hours. The platform is the deliverable.",
-                  "We do not compete on features. We compete on operational outcomes.",
+                  "We build for the warehouse floor first, the management office second.",
+                  "If a feature requires a training manual, it's too complicated to ship.",
+                  "We earn trust before asking for it. We don't overpromise in sales decks.",
+                  "Reliability is the baseline. Supply chains don't pause for software updates.",
                 ].map((p, i) => (
                   <li key={i} className="grid grid-cols-12 gap-4 border-b border-[color:var(--color-paper)]/15 pb-6">
                     <span className="col-span-2 editorial-eyebrow text-[color:var(--color-graphite-500)] md:col-span-1">
@@ -142,7 +140,7 @@ function About() {
                 loading="lazy"
                 width={1280}
                 height={1600}
-                className="h-full w-full object-cover grayscale"
+                className="h-full w-full object-cover"
               />
             </div>
             <div className="mt-10">

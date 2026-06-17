@@ -1,6 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
+import { AnimExpiry } from "@/components/site/AnimExpiry";
+import { AnimSync } from "@/components/site/AnimSync";
+import { AnimVoiceWave } from "@/components/site/AnimVoiceWave";
+import { AnimDispatch } from "@/components/site/AnimDispatch";
 
 export const Route = createFileRoute("/solutions")({
   head: () => ({
@@ -27,51 +31,51 @@ export const Route = createFileRoute("/solutions")({
 const solutions = [
   {
     n: "01",
-    t: "Distributor operations",
-    sub: "For the business that has outgrown its spreadsheet and resents its ERP.",
+    t: "Stop losing stock & tracking expires",
+    sub: "Resolves dependency on manual memory and visual checks. Establishes system-enforced FIFO/FEFO.",
     points: [
-      "Single source of truth across branches, channels, and partners",
-      "Order capture from sales, e-commerce, and trade",
-      "Pricing, discounting, and credit policy enforcement",
-      "Visibility from quote to cash without copy-pasting",
+      "Know exactly what is in your warehouse right now, from any phone.",
+      "Get automatic alerts before goods expire, preventing costly write-offs.",
+      "Force First-Expired-First-Out (FEFO) rules without manual checks.",
+      "Track every stock movement to eliminate unexplained shrinkage.",
     ],
-    metric: "On average, distributors who land on SANAK reduce branch-level reconciliation effort by more than 70% in the first quarter.",
+    metric: "Outcome: Elimination of expired goods write-offs and zero phantom stock reporting.",
   },
   {
     n: "02",
-    t: "Warehouse execution",
-    sub: "For operations that need the system to respect how the floor actually moves.",
+    t: "Centralize scattered operations",
+    sub: "Replaces distributed spreadsheets with a single, synchronized item master across all zones and branches.",
     points: [
-      "Receive, putaway, pick, pack, dispatch — modelled on real pick paths",
-      "Wave and zone strategies that can be re-tuned without re-implementation",
-      "Supervisor exception handling, not supervisor fire-fighting",
-      "Equipment, labour, and dock-door orchestration",
+      "One single list of items across all your branches and zones.",
+      "No more duplicate items or confusing codes between teams.",
+      "Reconcile stock without shutting down the warehouse for days.",
+      "Make stock adjustments directly from the floor with approval workflows.",
     ],
-    metric: "Average reduction in order-to-dispatch cycle: 58% within twelve weeks of go-live.",
+    metric: "Outcome: Near-zero stockout incidents caused by unsynchronized data between commercial and operational teams.",
   },
   {
     n: "03",
-    t: "Inventory truth",
-    sub: "For the finance function that has stopped trusting the operations function.",
+    t: "Empower the floor workers",
+    sub: "Natural language and conversational interfaces designed specifically for noisy, high-movement environments.",
     points: [
-      "Embedded MDM with a governed item master",
-      "Event-sourced stock movements, fully auditable",
-      "Cycle counting policy as code, not as memory",
-      "Variance management with provenance for every adjustment",
+      "Log receipts and pick orders just by speaking or typing naturally.",
+      "No laptops, no scanning guns, no two-week training programs.",
+      "The system handles the complexity; the worker just confirms the action.",
+      "Errors are caught before they are saved, not during the monthly audit.",
     ],
-    metric: "Phantom-stock incidents typically fall by 90%+ within two reconciliation cycles.",
+    metric: "Outcome: New operators reach full system competency within their first shift.",
   },
   {
     n: "04",
-    t: "Order flow",
-    sub: "For commercial teams who refuse to lose orders to internal hand-offs.",
+    t: "Fulfillment without WhatsApp chaos",
+    sub: "Direct system-to-floor dispatching. Eliminates manual re-entry and informal chat groups for critical operations.",
     points: [
-      "Allocation logic aware of channel, customer, and SLA",
-      "Backorder and partial-fulfilment policy made explicit",
-      "Returns, refusals, and damages handled as first-class events",
-      "Notifications and SLAs tracked against the actual order, not the avatar of one",
+      "Sales reps can check real-time stock before making a promise.",
+      "Orders flow directly to the floor without manual re-entry.",
+      "Track order status from picked to packed to delivered.",
+      "Stop losing orders in group chats or paper trails.",
     ],
-    metric: "Fill-rate improvements of 6–12 percentage points are typical at the end of pilot.",
+    metric: "Outcome: Significant reduction in order-to-dispatch cycles and complete auditability of hand-offs.",
   },
 ];
 
@@ -97,6 +101,10 @@ function Solutions() {
                     Module
                   </span>
                 </div>
+                {i === 0 && <AnimExpiry />}
+                {i === 1 && <AnimSync />}
+                {i === 2 && <AnimVoiceWave />}
+                {i === 3 && <AnimDispatch />}
                 <h2 className="mt-8 display-lg">{s.t}</h2>
                 <p className="mt-4 text-[color:var(--color-graphite-300)]">
                   {s.sub}

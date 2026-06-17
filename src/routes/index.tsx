@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
+import { VoiceDemoOverlay } from "@/components/site/VoiceDemoOverlay";
+import { InteractiveCapabilities } from "@/components/site/InteractiveCapabilities";
 import heroWarehouse from "@/assets/hero-warehouse.jpg";
 import brandStatement from "@/assets/brand-statement.jpg";
 import case1 from "@/assets/case-1.jpg";
@@ -35,32 +37,25 @@ export const Route = createFileRoute("/")({
 });
 
 const services = [
-  { n: "01", t: "Inventory truth", d: "Item master and stock state, reconciled and trusted across every operational surface." },
-  { n: "02", t: "Order flow", d: "Order capture, allocation, and fulfilment orchestrated end-to-end without lossy hand-offs." },
-  { n: "03", t: "Warehouse execution", d: "Putaway, picking, packing, and dispatch logic that respects how the floor actually moves." },
-  { n: "04", t: "Distributor intelligence", d: "Decision surfaces built from operational events, not retrofitted reports." },
+  { n: "01", t: "Inventory visibility", d: "Know exactly what's on your racks. No more phantom stock or frantic WhatsApp checks." },
+  { n: "02", t: "Order fulfillment", d: "From order received to loaded on the truck, without missing a beat or duplicating an entry." },
+  { n: "03", t: "Warehouse control", d: "Receive, putaway, and pick with a system that actually matches how your floor workers move." },
+  { n: "04", t: "Expiry management", d: "Catch expiring goods before they turn into write-offs. Enforce First-Expired-First-Out automatically." },
 ];
 
-const capabilities = [
-  { n: "01", t: "Modular SCM platform", d: "Composed of independent modules around a single master record. Buy what you need. Expand on terms that fit your operation." },
-  { n: "02", t: "Embedded MDM", d: "Item, partner, and location masters live inside the platform — not bolted on, not duplicated." },
-  { n: "03", t: "Land-and-expand product strategy", d: "Begin in the surface that hurts most. Extend across the operation as confidence compounds." },
-  { n: "04", t: "Event-native architecture", d: "Every action is an event. Every reconciliation is auditable. Every report is provable." },
-  { n: "05", t: "Built for mid-market distribution", d: "Engineered for businesses past spreadsheets and short of enterprise-grade complexity." },
-  { n: "06", t: "Operationally serious", d: "Designed by people who have run warehouses, not by people who have only built dashboards." },
-];
+
 
 const projects = [
-  { img: case1, eyebrow: "Case 001 / National FMCG distributor", title: "Reduced phantom stock by 96% across 14 branches", outcome: "From spreadsheet reconciliation to a single item master in 11 weeks." },
-  { img: case2, eyebrow: "Case 002 / Cold chain operator", title: "Cut order-to-dispatch cycle from 38 to 9 hours", outcome: "Allocation logic rebuilt against actual pick paths, not theoretical zones." },
-  { img: case3, eyebrow: "Case 003 / Industrial parts distributor", title: "Closed the books five days earlier, every month", outcome: "Inventory truth made financial close a procedural exercise, not a forensic one." },
+  { img: case1, eyebrow: "Jaringan Distribusi FMCG 24 Cabang di Jawa", title: "Stopped stockouts and cleared phantom inventory", outcome: "Moved from 14 messy spreadsheets to a single, trusted stock list in weeks." },
+  { img: case2, eyebrow: "Jaringan Cold Chain 5.000 sqm di Surabaya", title: "Orders out the door 4x faster", outcome: "Workers stopped searching for items. The system tells them exactly where to go." },
+  { img: case3, eyebrow: "Distributor Suku Cadang Industri Nasional", title: "Caught RM 2,000 in near-expired goods weekly", outcome: "Automated alerts replaced manual stock checks, saving thousands in write-offs." },
 ];
 
 const method = [
-  { n: "01", t: "Operational diagnosis", d: "We spend time on your floor before we spend time on your screens. Decisions follow evidence." },
-  { n: "02", t: "Master record establishment", d: "We build the item master first. Everything else inherits its discipline." },
-  { n: "03", t: "Module deployment", d: "We deploy the module that releases the most value first, then expand on a defined cadence." },
-  { n: "04", t: "Operational ownership", d: "We transfer the system to your people deliberately. Software that no one owns is software that decays." },
+  { n: "01", t: "Start on the floor", d: "We spend time in your warehouse before we look at any screens. We build for the people doing the work." },
+  { n: "02", t: "Clean the item list", d: "We establish a single, clean list of items. A messy stock list means a messy operation." },
+  { n: "03", t: "Deploy the most painful part", d: "We launch the feature that solves your biggest headache first, so your team feels the value immediately." },
+  { n: "04", t: "Hand over the keys", d: "We train your people to own the system natively. Software that workers don't use is software that dies." },
 ];
 
 const insights = [
@@ -83,8 +78,8 @@ function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <h1 className="mt-10 display-hero">
-                SCM software <br /> for distributors <br />
-                <span className="text-[color:var(--color-graphite-500)]">who need operational truth.</span>
+                The warehouse system <br /> that runs on conversation. <br />
+                <span className="text-[color:var(--color-graphite-500)]">No IT team required.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.25}>
@@ -112,8 +107,10 @@ function Home() {
                 alt="Industrial warehouse aisle with skylight"
                 width={1920}
                 height={1280}
-                className="h-full w-full object-cover grayscale"
+                className="h-full w-full object-cover opacity-80"
               />
+              {/* Voice Demo Chat Overlay */}
+              <VoiceDemoOverlay />
               <div className="absolute inset-x-6 bottom-6 flex items-end justify-between text-[color:var(--color-paper)]">
                 <p className="editorial-eyebrow">[ Plate 001 / Operational floor ]</p>
                 <p className="editorial-eyebrow">SANAK / 26</p>
@@ -122,16 +119,6 @@ function Home() {
           </Reveal>
         </div>
 
-        {/* marquee row */}
-        <div className="border-t border-[color:var(--color-paper)]/15">
-          <div className="container-edge mx-auto flex max-w-[1600px] flex-wrap items-center justify-between gap-y-4 py-6 editorial-eyebrow text-[color:var(--color-graphite-500)]">
-            <span>Modular SCM platform</span>
-            <span>Embedded MDM</span>
-            <span>Built for distributors</span>
-            <span>Warehouse execution</span>
-            <span>Operational truth</span>
-          </div>
-        </div>
       </section>
 
       {/* BRAND STATEMENT */}
@@ -139,14 +126,14 @@ function Home() {
         <div className="container-edge mx-auto grid max-w-[1600px] grid-cols-1 gap-16 py-28 md:grid-cols-12 md:gap-12 md:py-40">
           <Reveal className="md:col-span-5">
             <div className="relative aspect-[3/4] w-full overflow-hidden border border-[color:var(--color-border)] bg-[color:var(--color-ink)]">
-              <img
-                src={brandStatement}
-                alt="Worker in a distribution centre"
-                loading="lazy"
-                width={1080}
-                height={1440}
-                className="h-full w-full object-cover grayscale"
-              />
+                <img
+                  src={brandStatement}
+                  alt="Worker in a distribution centre"
+                  loading="lazy"
+                  width={1080}
+                  height={1440}
+                  className="h-full w-full object-cover"
+                />
             </div>
           </Reveal>
           <div className="md:col-span-7 md:pl-8">
@@ -157,21 +144,16 @@ function Home() {
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-8 display-xl">
-                We build software for the operations that hold distribution together.
+                We build software for the people actually doing the work on the floor.
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-10 grid gap-6 text-lg leading-relaxed text-[color:var(--color-graphite-300)] md:grid-cols-2">
                 <p>
-                  SANAK.AI is a product platform, not a project. We build modular supply chain
-                  software designed around the discipline distributors and warehousing
-                  businesses already keep — and refuse the parts they have rightly come to
-                  distrust.
+                  Every SCM software ever built assumes something you don't have: an IT team, a long implementation runway, and a workforce that can sit through weeks of training. SANAK changes that.
                 </p>
                 <p>
-                  Our work is opinionated. The item master is the foundation. Operational
-                  events are the substrate. Reports are an output, not an objective. What
-                  you measure is what you can move.
+                  We built a system that floor workers can operate just by speaking or typing naturally. When the system is simple enough for the floor worker to use, the data becomes accurate, and the chaos stops.
                 </p>
               </div>
             </Reveal>
@@ -210,7 +192,7 @@ function Home() {
                     <p className="editorial-eyebrow text-[color:var(--color-graphite-400)] group-hover:text-[color:var(--color-graphite-500)]">
                       {s.n}
                     </p>
-                    <h3 className="mt-6 font-display text-3xl font-light leading-tight">
+                    <h3 className="mt-6 font-display text-3xl leading-tight">
                       {s.t}
                     </h3>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--color-graphite-300)] group-hover:text-[color:var(--color-graphite-600)]">
@@ -227,38 +209,7 @@ function Home() {
       {/* CAPABILITIES */}
       <section className="border-y border-[color:var(--color-border)]">
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
-          <div className="grid grid-cols-1 gap-16 md:grid-cols-12">
-            <div className="md:col-span-5">
-              <Reveal>
-                <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                  [ Capabilities / 03 ]
-                </p>
-                <h2 className="mt-8 display-xl">
-                  Built for inventory clarity. <br />
-                  <span className="text-[color:var(--color-graphite-500)]">Designed for execution.</span>
-                </h2>
-              </Reveal>
-            </div>
-            <div className="md:col-span-7">
-              <ol className="divide-y divide-[color:var(--color-border-strong)]">
-                {capabilities.map((c, i) => (
-                  <Reveal key={c.n} delay={i * 0.04}>
-                    <li className="grid grid-cols-12 gap-6 py-8">
-                      <span className="col-span-2 editorial-eyebrow text-[color:var(--color-graphite-400)] md:col-span-1">
-                        {c.n}
-                      </span>
-                      <h3 className="col-span-10 font-display text-2xl md:col-span-4">
-                        {c.t}
-                      </h3>
-                      <p className="col-span-12 text-[color:var(--color-graphite-300)] md:col-span-7">
-                        {c.d}
-                      </p>
-                    </li>
-                  </Reveal>
-                ))}
-              </ol>
-            </div>
-          </div>
+          <InteractiveCapabilities />
         </div>
       </section>
 
@@ -292,7 +243,7 @@ function Home() {
                       loading="lazy"
                       width={1600}
                       height={2000}
-                      className="h-full w-full object-cover grayscale transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                     />
                   </div>
                   <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-500)]">
@@ -345,40 +296,6 @@ function Home() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
-      <section className="bg-[color:var(--color-paper-2)]">
-        <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
-          <Reveal>
-            <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-              [ In their words / 06 ]
-            </p>
-          </Reveal>
-          <div className="mt-16 grid gap-12 md:grid-cols-2 md:gap-16">
-            {[
-              {
-                q: "We stopped arguing about the numbers. The system became the source of truth, and everyone returned to running the business.",
-                a: "Director of Operations · National FMCG distributor",
-              },
-              {
-                q: "SANAK is the first vendor we have worked with who understood a warehouse before they opened a laptop.",
-                a: "Head of Supply Chain · Cold chain operator",
-              },
-            ].map((t, i) => (
-              <Reveal key={i} delay={i * 0.1}>
-                <figure className="border-t border-[color:var(--color-border-strong)] pt-10">
-                  <blockquote className="font-display text-2xl leading-snug md:text-3xl">
-                    “{t.q}”
-                  </blockquote>
-                  <figcaption className="mt-8 editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                    {t.a}
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* INSIGHTS */}
       <section className="border-y border-[color:var(--color-border)]">
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
@@ -409,7 +326,7 @@ function Home() {
                       loading="lazy"
                       width={1600}
                       height={1000}
-                      className="h-full w-full object-cover grayscale"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                   <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-400)]">

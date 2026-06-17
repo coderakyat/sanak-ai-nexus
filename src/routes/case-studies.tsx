@@ -107,7 +107,7 @@ function CaseStudies() {
                       loading="lazy"
                       width={1600}
                       height={1200}
-                      className="h-full w-full object-cover grayscale"
+                      className="h-full w-full object-cover"
                     />
                   </div>
                 </div>

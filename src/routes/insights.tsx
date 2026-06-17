@@ -88,7 +88,7 @@ function Insights() {
                   loading="lazy"
                   width={1600}
                   height={1000}
-                  className="h-full w-full object-cover grayscale"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </div>
@@ -118,7 +118,7 @@ function Insights() {
                     loading="lazy"
                     width={1600}
                     height={1000}
-                    className="h-full w-full object-cover grayscale"
+                    className="h-full w-full object-cover"
                   />
                 </div>
                 <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-400)]">

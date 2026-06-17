@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.png";
 
 const NAV = [
   { to: "/about", label: "About" },
@@ -8,7 +9,6 @@ const NAV = [
   { to: "/case-studies", label: "Case Studies" },
   { to: "/insights", label: "Insights" },
   { to: "/team", label: "Team" },
-  { to: "/careers", label: "Careers" },
 ] as const;
 
 export function SiteHeader() {
@@ -40,16 +40,19 @@ export function SiteHeader() {
       <div className="container-edge mx-auto flex h-16 max-w-[1600px] items-center justify-between md:h-20">
         <Link
           to="/"
-          className="flex items-baseline gap-2"
+          className="flex items-center gap-3"
           onClick={() => setOpen(false)}
           aria-label="SANAK.AI — home"
         >
-          <span className="font-display text-2xl tracking-tight md:text-[1.65rem]">
-            SANAK
-          </span>
-          <span className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-            .AI
-          </span>
+          <img src={logo} alt="SANAK.AI" className="h-8 w-auto md:h-9" />
+          <div className="flex items-baseline gap-1">
+            <span className="font-display text-2xl tracking-tight md:text-[1.65rem]">
+              SANAK
+            </span>
+            <span className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
+              .AI
+            </span>
+          </div>
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex">
