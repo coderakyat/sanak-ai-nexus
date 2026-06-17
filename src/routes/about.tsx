@@ -264,7 +264,7 @@ function About() {
             <div className="md:col-span-5">
               <Reveal>
                 <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                  [ Operating principles ]
+                  [ The Team ]
                 </p>
                 <h2 className="mt-6 display-xl">Practical over sophisticated.</h2>
               </Reveal>
