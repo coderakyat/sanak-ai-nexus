@@ -103,12 +103,14 @@ export function InteractiveCapabilities() {
       <div className="md:col-span-7">
         <ol className="divide-y divide-[color:var(--color-border-strong)]">
           {capabilities.map((c, i) => (
-            <Reveal key={c.n} delay={i * 0.04}>
-              <li 
-                className={`grid grid-cols-12 gap-6 py-8 cursor-pointer transition-colors duration-300 ${activeIndex === i ? 'bg-[color:var(--color-paper-2)] -mx-6 px-6 border-l-4 border-l-[color:var(--color-ink)]' : 'hover:bg-[color:var(--color-paper-2)]/50'}`}
-                onMouseEnter={() => setActiveIndex(i)}
-                onClick={() => setActiveIndex(i)}
-              >
+            <Reveal 
+              key={c.n} 
+              delay={i * 0.04}
+              as="li"
+              className={`grid grid-cols-12 gap-6 py-8 cursor-pointer transition-colors duration-300 ${activeIndex === i ? 'bg-[color:var(--color-paper-2)] -mx-6 px-6 border-l-4 border-l-[color:var(--color-ink)]' : 'hover:bg-[color:var(--color-paper-2)]/50'}`}
+              onMouseEnter={() => setActiveIndex(i)}
+              onClick={() => setActiveIndex(i)}
+            >
                 <span className={`col-span-2 editorial-eyebrow md:col-span-1 transition-colors ${activeIndex === i ? 'text-[color:var(--color-ink)] font-bold' : 'text-[color:var(--color-graphite-400)]'}`}>
                   {c.n}
                 </span>
@@ -118,7 +120,6 @@ export function InteractiveCapabilities() {
                 <p className="col-span-12 text-[color:var(--color-graphite-300)] md:col-span-7">
                   {c.d}
                 </p>
-              </li>
             </Reveal>
           ))}
         </ol>

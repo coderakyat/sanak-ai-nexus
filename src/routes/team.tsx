@@ -21,7 +21,7 @@ export const Route = createFileRoute("/team")({
       },
       { property: "og:url", content: "/team" },
     ],
-    links: [{ rel: "canonical", href: "/team" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/team" }],
   }),
   component: Team,
 });

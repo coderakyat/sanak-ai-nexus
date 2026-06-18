@@ -22,7 +22,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:url", content: "/about" },
       { property: "og:image", content: aboutHero },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/about" }],
   }),
   component: About,
 });

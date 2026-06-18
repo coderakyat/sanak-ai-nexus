@@ -19,7 +19,7 @@ export const Route = createFileRoute("/services")({
       },
       { property: "og:url", content: "/services" },
     ],
-    links: [{ rel: "canonical", href: "/services" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/services" }],
   }),
   component: Services,
 });

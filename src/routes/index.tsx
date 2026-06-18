@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")(({
       { property: "og:image", content: heroWarehouse },
       { name: "twitter:image", content: heroWarehouse },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/" }],
   }),
   component: Home,
 }));

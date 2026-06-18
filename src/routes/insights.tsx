@@ -24,7 +24,7 @@ export const Route = createFileRoute("/insights")({
       { property: "og:url", content: "/insights" },
       { property: "og:image", content: insight1 },
     ],
-    links: [{ rel: "canonical", href: "/insights" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/insights" }],
   }),
   component: Insights,
 });

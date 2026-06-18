@@ -20,7 +20,7 @@ export const Route = createFileRoute("/faq")({
       },
       { property: "og:url", content: "/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/faq" }],
   }),
   component: FAQ,
 });
