@@ -22,7 +22,7 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:url", content: "/case-studies" },
       { property: "og:image", content: case1 },
     ],
-    links: [{ rel: "canonical", href: "/case-studies" }],
+    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/case-studies" }],
   }),
   component: CaseStudies,
 });

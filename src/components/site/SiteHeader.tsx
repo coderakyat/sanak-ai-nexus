@@ -45,7 +45,7 @@ export function SiteHeader() {
           onClick={() => setOpen(false)}
           aria-label="SANAK.AI — home"
         >
-          <img src={logo} alt="SANAK.AI" className="h-8 w-auto md:h-9" />
+          <img src={logo} alt="SANAK.AI" width={120} height={36} className="h-8 w-auto md:h-9" />
           <div className="flex items-baseline gap-1">
             <span className="font-display text-2xl tracking-tight md:text-[1.65rem]">
               SANAK
