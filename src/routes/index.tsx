@@ -4,8 +4,8 @@ import { Reveal } from "@/components/site/Reveal";
 import { VoiceDemoOverlay } from "@/components/site/VoiceDemoOverlay";
 import { InteractiveCapabilities } from "@/components/site/InteractiveCapabilities";
 import { Marquee } from "@/components/site/Marquee";
-import heroWarehouse from "@/assets/hero-warehouse.jpg";
-import brandStatement from "@/assets/brand-statement.jpg";
+import heroWarehouse from "@/assets/hero-warehouse.webp";
+import brandStatement from "@/assets/brand-statement.webp";
 import case1 from "@/assets/case-1.jpg";
 import case2 from "@/assets/case-2.jpg";
 import case3 from "@/assets/case-3.jpg";
@@ -106,7 +106,7 @@ function Home() {
         <div className="container-edge mx-auto grid min-h-[92vh] max-w-[1600px] grid-cols-1 gap-12 pb-16 pt-28 md:grid-cols-12 md:pt-40">
           <div className="md:col-span-7 md:pr-8">
             <Reveal>
-              <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
+              <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
                 [ SCM software for Mid-Market Distributors ]
               </p>
             </Reveal>
@@ -116,11 +116,11 @@ function Home() {
                 <br />
                 Spoken Into Existence.{" "}
                 <br />
-                <span className="text-[color:var(--color-graphite-500)]">No IT team required.</span>
+                <span className="text-[color:var(--color-graphite-700)]">No IT team required.</span>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
-              <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-graphite-400)]">
+              <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-graphite-600)]">
                 The conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia. Ask it anything. Tell it what you're doing. It handles the rest — in real time, from your phone.
               </p>
             </Reveal>
@@ -296,7 +296,7 @@ function Home() {
         <div className="container-edge mx-auto max-w-[1600px] py-28 md:py-40">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <Reveal>
-              <p className="editorial-eyebrow text-[color:var(--color-graphite-500)]">
+              <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
                 [ Case Studies / 04 ]
               </p>
               <h2 className="mt-6 display-xl max-w-[18ch]">
@@ -324,11 +324,11 @@ function Home() {
                       className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                     />
                   </div>
-                  <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-500)]">
+                  <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-700)]">
                     {p.eyebrow}
                   </p>
                   <h3 className="mt-4 font-display text-2xl leading-tight">{p.title}</h3>
-                  <p className="mt-3 text-sm text-[color:var(--color-graphite-500)]">
+                  <p className="mt-3 text-sm text-[color:var(--color-graphite-700)]">
                     {p.outcome}
                   </p>
                 </article>
@@ -403,7 +403,7 @@ function Home() {
         <div className="container-edge mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-8 py-24 md:flex-row md:items-end">
           <Reveal>
             <h2 className="display-xl max-w-[20ch]">Ready to see it in action?</h2>
-            <p className="mt-6 max-w-md text-lg text-[color:var(--color-graphite-400)]">
+            <p className="mt-6 max-w-md text-lg text-[color:var(--color-graphite-600)]">
               Book a 30-minute demo. We'll show you SANAK running on real data, for an operation that looks like yours.
             </p>
           </Reveal>
