@@ -56,7 +56,7 @@ export function SiteFooter() {
         </div>
 
         {/* MASSIVE BRAND WATERMARK */}
-        <div className="mt-16 w-full overflow-hidden select-none pointer-events-none">
+        <div className="mt-16 w-full overflow-hidden select-none pointer-events-none" aria-hidden="true">
           <h1 className="text-[15vw] leading-none font-display text-[color:var(--color-paper)]/5 text-center tracking-tighter">
             SANAK.AI
           </h1>

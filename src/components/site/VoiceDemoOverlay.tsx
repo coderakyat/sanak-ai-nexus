@@ -53,14 +53,14 @@ export function VoiceDemoOverlay() {
       </div>
       
       <div 
-        className={`self-start bg-[color:var(--color-graphite-900)] text-[color:var(--color-paper)] border border-[color:var(--color-border-strong)] px-4 py-4 text-sm rounded-t-2xl rounded-br-2xl max-w-[100%] w-full shadow-lg transition-all duration-500 transform ${showResponse ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+        className={`self-start bg-[color:var(--color-ink-2)] text-[color:var(--color-paper)] border border-[color:var(--color-border-strong)] px-4 py-4 text-sm rounded-t-2xl rounded-br-2xl max-w-[100%] w-full shadow-lg transition-all duration-500 transform ${showResponse ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
       >
-        <p className="font-semibold tracking-wider text-[11px] uppercase text-[color:var(--color-graphite-400)] mb-3">GRN Confirmed</p>
+        <p className="font-semibold tracking-wider text-[11px] uppercase text-[color:var(--color-graphite-600)] mb-3">GRN Confirmed</p>
         <div className="flex justify-between items-center border-b border-[color:var(--color-border-strong)] pb-3 mb-3">
           <span className="font-display text-lg">Milo 1kg</span>
           <span className="text-green-400 font-mono">+100 ctn</span>
         </div>
-        <p className="text-[13px] text-[color:var(--color-graphite-400)]">Stock updated to 450 ctn in Zone A.</p>
+        <p className="text-[13px] text-[color:var(--color-graphite-600)]">Stock updated to 450 ctn in Zone A.</p>
       </div>
     </div>
   );
