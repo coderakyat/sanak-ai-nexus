@@ -91,6 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "A modular supply chain platform built for distributors and warehousing operations.",
       },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "google-site-verification", content: "Y3OT643wLjG3A50XV8HnbB5wsZB9ya6TzxCaGGBb_UQ" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
