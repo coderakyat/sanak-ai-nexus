@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
+import { useTranslation } from "react-i18next";
 import case1 from "@/assets/case-1.jpg";
 import case2 from "@/assets/case-2.jpg";
 import case3 from "@/assets/case-3.jpg";
@@ -92,12 +93,13 @@ const cases = [
 ];
 
 function CaseStudies() {
+  const { t } = useTranslation();
   return (
     <SiteShell>
       <PageHeader
-        eyebrow="[ Case studies / Field record ]"
-        title={<>Evidence over assertion.</>}
-        intro="Three operations, three operating outcomes. Details have been adapted to protect commercial confidentiality, but the situations, the problems, and the results are real."
+        eyebrow={t("case_studies.eyebrow")}
+        title={<>{t("case_studies.title_1")}</>}
+        intro={t("case_studies.intro")}
       />
 
       <div className="container-edge mx-auto max-w-[1600px]">
@@ -136,13 +138,13 @@ function CaseStudies() {
               <div className="md:col-span-7 md:pl-8">
                 <dl className="space-y-10">
                   <div className="border-t border-[color:var(--color-border-strong)] pt-6">
-                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">The Situation</dt>
+                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">{t("case_studies.situation_label")}</dt>
                     <dd className="mt-4 text-lg leading-relaxed text-[color:var(--color-graphite-200)]">
                       {c.situation}
                     </dd>
                   </div>
                   <div className="border-t border-[color:var(--color-border-strong)] pt-6">
-                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">What changed with SANAK</dt>
+                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">{t("case_studies.changed_label")}</dt>
                     <dd className="mt-4">
                       <ul className="space-y-4">
                         {c.changed.map((item) => (
@@ -157,7 +159,7 @@ function CaseStudies() {
                     </dd>
                   </div>
                   <div className="border-t border-[color:var(--color-border-strong)] pt-6">
-                    <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">The Outcome</dt>
+                     <dt className="editorial-eyebrow text-[color:var(--color-graphite-400)]">{t("case_studies.outcome_label")}</dt>
                     <dd className="mt-4 font-display text-xl leading-snug text-[color:var(--color-graphite-200)]">
                       {c.outcome}
                     </dd>
@@ -171,12 +173,12 @@ function CaseStudies() {
 
       <section className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)]">
         <div className="container-edge mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-8 py-24 md:flex-row md:items-end">
-          <h2 className="display-xl max-w-[20ch]">Discuss your operation.</h2>
+          <h2 className="display-xl max-w-[20ch]">{t("case_studies.cta_h2")}</h2>
           <Link
             to="/contact"
             className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
           >
-            Book a Demo →
+            {t("case_studies.cta_btn")}
           </Link>
         </div>
       </section>

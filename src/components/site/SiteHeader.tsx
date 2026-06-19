@@ -1,18 +1,21 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.webp";
+import { useTranslation } from "react-i18next";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV = [
-  { to: "/about", label: "About" },
-  { to: "/services", label: "Services" },
-  { to: "/solutions", label: "Solutions" },
-  { to: "/case-studies", label: "Case Studies" },
-  { to: "/insights", label: "Insights" },
-  { to: "/team", label: "Team" },
-  { to: "/faq", label: "FAQ" },
+  { to: "/about", labelKey: "about" },
+  { to: "/services", labelKey: "services" },
+  { to: "/solutions", labelKey: "solutions" },
+  { to: "/case-studies", labelKey: "case_studies" },
+  { to: "/insights", labelKey: "insights" },
+  { to: "/team", labelKey: "team" },
+  { to: "/faq", labelKey: "faq" },
 ] as const;
 
 export function SiteHeader() {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -64,17 +67,20 @@ export function SiteHeader() {
               className="editorial-eyebrow text-[color:var(--color-graphite-300)] transition-colors hover:text-[color:var(--color-ink)]"
               activeProps={{ className: "text-[color:var(--color-ink)]" }}
             >
-              {item.label}
+              {t(`header.${item.labelKey}`)}
             </Link>
           ))}
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="hidden lg:block">
+            <LanguageSwitcher />
+          </div>
           <Link
             to="/contact"
             className="hidden bg-[color:var(--color-ink)] px-5 py-3 editorial-eyebrow text-[color:var(--color-paper)] transition-opacity hover:opacity-80 md:inline-flex"
           >
-            Request a demo
+            {t("header.request_demo")}
           </Link>
           <button
             type="button"
@@ -114,18 +120,22 @@ export function SiteHeader() {
                 onClick={() => setOpen(false)}
                 className="flex items-baseline justify-between border-b border-[color:var(--color-border)] py-5"
               >
-                <span className="font-display text-3xl">{item.label}</span>
+                <span className="font-display text-3xl">{t(`header.${item.labelKey}`)}</span>
                 <span className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </Link>
             ))}
+            <div className="mt-8 flex justify-between items-center border-b border-[color:var(--color-border)] pb-5">
+              <span className="font-display text-2xl">Language</span>
+              <LanguageSwitcher />
+            </div>
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
               className="mt-8 inline-flex items-center justify-center bg-[color:var(--color-ink)] px-6 py-4 editorial-eyebrow text-[color:var(--color-paper)]"
             >
-              Request a demo
+              {t("header.request_demo")}
             </Link>
           </div>
         </div>

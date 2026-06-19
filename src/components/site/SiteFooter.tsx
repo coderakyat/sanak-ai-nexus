@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
+import { useTranslation } from "react-i18next";
 
 export function SiteFooter() {
+  const { t } = useTranslation();
   const year = new Date().getFullYear();
   return (
     <footer className="relative bg-[color:var(--color-ink)] text-[color:var(--color-paper)]">
@@ -8,39 +10,38 @@ export function SiteFooter() {
         <div className="grid gap-16 md:grid-cols-12">
           <div className="md:col-span-6">
             <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-              [ Closing statement ]
+              {t("footer.closing_statement")}
             </p>
-            <h2 className="mt-6 font-display text-4xl leading-[0.95] md:text-5xl lg:text-6xl text-[color:var(--color-graphite-600)]">
-              Operational truth. <br /> Engineered for distribution.
+            <h2 className="mt-6 font-display text-4xl leading-[0.95] md:text-5xl lg:text-6xl text-[color:var(--color-graphite-600)]" dangerouslySetInnerHTML={{ __html: t("footer.operational_truth") }}>
             </h2>
           </div>
 
           <div className="grid grid-cols-2 gap-10 md:col-span-6 md:grid-cols-3">
             <div>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                Company
+                {t("footer.company")}
               </p>
               <ul className="mt-5 space-y-3 text-sm text-[color:var(--color-graphite-600)]">
-                <li><Link to="/about" className="hover:text-[color:var(--color-paper)] transition-colors">About</Link></li>
-                <li><Link to="/team" className="hover:text-[color:var(--color-paper)] transition-colors">Team</Link></li>
-                <li><Link to="/insights" className="hover:text-[color:var(--color-paper)] transition-colors">Insights</Link></li>
+                <li><Link to="/about" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.about")}</Link></li>
+                <li><Link to="/team" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.team")}</Link></li>
+                <li><Link to="/insights" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.insights")}</Link></li>
               </ul>
             </div>
             <div>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                Product
+                {t("footer.product")}
               </p>
               <ul className="mt-5 space-y-3 text-sm text-[color:var(--color-graphite-600)]">
-                <li><Link to="/services" className="hover:text-[color:var(--color-paper)] transition-colors">Services</Link></li>
-                <li><Link to="/solutions" className="hover:text-[color:var(--color-paper)] transition-colors">Solutions</Link></li>
-                <li><Link to="/case-studies" className="hover:text-[color:var(--color-paper)] transition-colors">Case studies</Link></li>
-                <li><Link to="/faq" className="hover:text-[color:var(--color-paper)] transition-colors">FAQ</Link></li>
-                <li><Link to="/contact" className="hover:text-[color:var(--color-paper)] transition-colors">Contact</Link></li>
+                <li><Link to="/services" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.services")}</Link></li>
+                <li><Link to="/solutions" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.solutions")}</Link></li>
+                <li><Link to="/case-studies" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.case_studies")}</Link></li>
+                <li><Link to="/faq" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.faq")}</Link></li>
+                <li><Link to="/contact" className="hover:text-[color:var(--color-paper)] transition-colors">{t("footer.contact")}</Link></li>
               </ul>
             </div>
             <div>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                Contact
+                {t("footer.contact")}
               </p>
               <ul className="mt-5 space-y-3 text-sm text-[color:var(--color-graphite-600)]">
                 <li><a href="mailto:hello@sanak.ai" className="hover:text-[color:var(--color-paper)] transition-colors">hello@sanak.ai</a></li>
@@ -51,8 +52,8 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-20 flex flex-col items-start justify-between gap-6 border-t border-[color:var(--color-paper)]/15 pt-8 text-xs text-[color:var(--color-graphite-700)] md:flex-row md:items-center">
-          <p>© {year} SANAK.AI — All rights reserved.</p>
-          <p className="font-mono">SCM software for distributors and warehousing.</p>
+          <p>{t("footer.rights_reserved", { year })}</p>
+          <p className="font-mono">{t("footer.footer_mono")}</p>
         </div>
 
         {/* MASSIVE BRAND WATERMARK */}

@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Reveal } from "@/components/site/Reveal";
+import { useTranslation } from "react-i18next";
 
-const capabilities = [
-  { n: "01", t: "Conversational interface", d: "Floor workers run operations by speaking or typing naturally. No IT training or laptops required." },
-  { n: "02", t: "Centralized stock list", d: "One source of truth for all your items. No more duplicate codes across branches or spreadsheets." },
-  { n: "03", t: "100% Audit trail", d: "Every movement is tracked. Know exactly who moved what, when, and for which order." },
-  { n: "04", t: "Start in 48 hours", d: "No long implementation runways. Land the system where it hurts most, and expand from there." },
-  { n: "05", t: "Built for mid-market", d: "Engineered for distributors that have outgrown Excel but don't want the heavy burden of legacy ERPs." },
-  { n: "06", t: "Field-worker first", d: "Designed for the people actually doing the work in a noisy warehouse, not just the managers in the office." },
+const capabilityKeys = [
+  { n: "01", tKey: "home.cap_01_t", dKey: "home.cap_01_d" },
+  { n: "02", tKey: "home.cap_02_t", dKey: "home.cap_02_d" },
+  { n: "03", tKey: "home.cap_03_t", dKey: "home.cap_03_d" },
+  { n: "04", tKey: "home.cap_04_t", dKey: "home.cap_04_d" },
+  { n: "05", tKey: "home.cap_05_t", dKey: "home.cap_05_d" },
+  { n: "06", tKey: "home.cap_06_t", dKey: "home.cap_06_d" },
 ];
 
 export function InteractiveCapabilities() {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
@@ -18,11 +20,11 @@ export function InteractiveCapabilities() {
       <div className="md:col-span-5 flex flex-col">
         <Reveal>
           <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-            [ Capabilities / 03 ]
+            {t("home.cap_eyebrow")}
           </p>
           <h2 className="mt-8 display-xl">
-            Built for inventory clarity. <br />
-            <span className="text-[color:var(--color-graphite-500)]">Designed for execution.</span>
+            {t("home.cap_h2_1")} <br />
+            <span className="text-[color:var(--color-graphite-500)]">{t("home.cap_h2_2")}</span>
           </h2>
         </Reveal>
         
@@ -102,7 +104,7 @@ export function InteractiveCapabilities() {
 
       <div className="md:col-span-7">
         <ol className="divide-y divide-[color:var(--color-border-strong)]">
-          {capabilities.map((c, i) => (
+          {capabilityKeys.map((c, i) => (
             <Reveal 
               key={c.n} 
               delay={i * 0.04}
@@ -115,10 +117,10 @@ export function InteractiveCapabilities() {
                   {c.n}
                 </span>
                 <h3 className={`col-span-10 font-display text-2xl md:col-span-4 transition-colors ${activeIndex === i ? 'text-[color:var(--color-ink)]' : ''}`}>
-                  {c.t}
+                  {t(c.tKey)}
                 </h3>
                 <p className="col-span-12 text-[color:var(--color-graphite-300)] md:col-span-7">
-                  {c.d}
+                  {t(c.dKey)}
                 </p>
             </Reveal>
           ))}

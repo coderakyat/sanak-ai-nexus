@@ -12,6 +12,7 @@ import case3 from "@/assets/case-3.jpg";
 import insight1 from "@/assets/insight-1.jpg";
 import insight2 from "@/assets/insight-2.jpg";
 import insight3 from "@/assets/insight-3.jpg";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/")(({
   head: () => ({
@@ -40,26 +41,26 @@ export const Route = createFileRoute("/")(({
 const valueProps = [
   {
     n: "01",
-    t: "Real-Time Inventory Visibility",
-    d: "Know exactly what you have, where it is, and when it expires — without calling anyone or waiting for a report. Query by voice or text, get answers in seconds.",
+    tKey: "home.vp_1_t",
+    dKey: "home.vp_1_d",
   },
   {
     n: "02",
-    t: "Voice-First for Field Workers",
-    d: "Your warehouse staff shouldn't need a laptop or training to update a system. SANAK works the way they already communicate — speak naturally, get the right input captured instantly.",
+    tKey: "home.vp_2_t",
+    dKey: "home.vp_2_d",
   },
   {
     n: "03",
-    t: "Audit Trail, Automatically",
-    d: "Every receiving, every outbound, every stock adjustment is logged with who did it, when, and why. No more guessing when something doesn't add up.",
+    tKey: "home.vp_3_t",
+    dKey: "home.vp_3_d",
   },
 ];
 
-const stats = [
-  { v: "< 1 day", l: "to go live — full onboarding in a single working day" },
-  { v: "2 sec", l: "average response time for stock queries" },
-  { v: "Zero", l: "IT department required" },
-  { v: "5", l: "modules covering inventory, procurement, sales, logistics, and delivery" },
+const statsKeys = [
+  { vKey: "home.stat_1_v", lKey: "home.stat_1_l" },
+  { vKey: "home.stat_2_v", lKey: "home.stat_2_l" },
+  { vKey: "home.stat_3_v", lKey: "home.stat_3_l" },
+  { vKey: "home.stat_4_v", lKey: "home.stat_4_l" },
 ];
 
 const industries = [
@@ -71,34 +72,20 @@ const industries = [
   "Food & Beverage",
 ];
 
-const projects = [
-  {
-    img: case1,
-    eyebrow: "FMCG Distributor — Selangor",
-    title: "Stopped stockouts and cleared phantom inventory",
-    outcome: "Sales team queries stock in real time during customer visits. First expiry alert fired within the first week.",
-  },
-  {
-    img: case2,
-    eyebrow: "Industrial Distributor — Johor",
-    title: "Solved the key person dependency problem",
-    outcome: "Operational knowledge encoded into the system. The operation runs on the system, not on any one person.",
-  },
-  {
-    img: case3,
-    eyebrow: "F&B Distributor — Kuala Lumpur",
-    title: "Met full traceability requirements in two weeks",
-    outcome: "Batch tracking from supplier receipt to customer delivery, queryable from a phone in seconds.",
-  },
+const projectKeys = [
+  { img: case1, eyebrowKey: "home.case_1_eyebrow", titleKey: "home.case_1_title", outcomeKey: "home.case_1_outcome" },
+  { img: case2, eyebrowKey: "home.case_2_eyebrow", titleKey: "home.case_2_title", outcomeKey: "home.case_2_outcome" },
+  { img: case3, eyebrowKey: "home.case_3_eyebrow", titleKey: "home.case_3_title", outcomeKey: "home.case_3_outcome" },
 ];
 
-const insights = [
-  { img: insight1, eyebrow: "Field note", title: "Why inventory truth is a discipline, not a feature", read: "6 min read" },
-  { img: insight2, eyebrow: "Position paper", title: "The case against the report-first SCM stack", read: "9 min read" },
-  { img: insight3, eyebrow: "Operating brief", title: "Item master as the foundation of distribution operations", read: "7 min read" },
+const insightKeys = [
+  { img: insight1, eyebrowKey: "home.insight_1_eyebrow", titleKey: "home.insight_1_title", readKey: "home.insight_1_read" },
+  { img: insight2, eyebrowKey: "home.insight_2_eyebrow", titleKey: "home.insight_2_title", readKey: "home.insight_2_read" },
+  { img: insight3, eyebrowKey: "home.insight_3_eyebrow", titleKey: "home.insight_3_title", readKey: "home.insight_3_read" },
 ];
 
 function Home() {
+  const { t } = useTranslation();
   return (
     <SiteShell>
       {/* HERO */}
@@ -107,21 +94,16 @@ function Home() {
           <div className="md:col-span-7 md:pr-8">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                [ SCM software for Mid-Market Distributors ]
+                {t("home.eyebrow")}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <h1 className="mt-10 display-hero">
-                Your Supply Chain,{" "}
-                <br />
-                Spoken Into Existence.{" "}
-                <br />
-                <span className="text-[color:var(--color-graphite-700)]">No IT team required.</span>
+              <h1 className="mt-10 display-hero" dangerouslySetInnerHTML={{ __html: t("home.hero_title") }}>
               </h1>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="mt-8 max-w-lg text-lg leading-relaxed text-[color:var(--color-graphite-600)]">
-                The conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia. Ask it anything. Tell it what you're doing. It handles the rest — in real time, from your phone.
+                {t("home.hero_subtitle")}
               </p>
             </Reveal>
             <Reveal delay={0.25}>
@@ -130,13 +112,13 @@ function Home() {
                   to="/contact"
                   className="bg-[color:var(--color-paper)] px-7 py-4 editorial-eyebrow text-[color:var(--color-ink)] transition-opacity hover:opacity-80"
                 >
-                  Book a Demo
+                  {t("home.request_demo")}
                 </Link>
                 <Link
                   to="/solutions"
                   className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
                 >
-                  See How It Works
+                  {t("home.view_capabilities")}
                 </Link>
               </div>
             </Reveal>
@@ -167,19 +149,17 @@ function Home() {
         <div className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
           <Reveal>
             <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-              [ The Problem We Solve ]
+              {t("home.problem_eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-8 max-w-4xl font-display text-2xl leading-relaxed text-[color:var(--color-graphite-200)] md:text-3xl">
-              Mid-market distributors in Malaysia and Singapore are running real businesses — moving real inventory, coordinating real teams — on Excel, WhatsApp, and verbal handoffs. Not because they don't want better tools. Because every SCM system ever built assumed they had an IT department, a long implementation runway, and a warehouse team that can sit through training.
+              {t("home.problem_desc")}
             </p>
           </Reveal>
           <Reveal delay={0.2}>
             <div className="mt-12 border-l-4 border-[color:var(--color-ink)] pl-6 md:pl-10">
-              <p className="font-display text-3xl leading-snug text-[color:var(--color-ink)] md:text-5xl">
-                SANAK was built for the gap <br className="hidden md:block" />
-                that everyone else ignored.
+              <p className="font-display text-3xl leading-snug text-[color:var(--color-ink)] md:text-5xl" dangerouslySetInnerHTML={{ __html: t("home.problem_highlight") }}>
               </p>
             </div>
           </Reveal>
@@ -204,21 +184,21 @@ function Home() {
           <div className="md:col-span-7 md:pl-8">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                [ Brand statement / 01 ]
+                {t("home.brand_eyebrow")}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="mt-8 display-xl">
-                We build software for the people actually doing the work on the floor.
+                {t("home.brand_title")}
               </h2>
             </Reveal>
             <Reveal delay={0.2}>
               <div className="mt-10 grid gap-6 text-lg leading-relaxed text-[color:var(--color-graphite-300)] md:grid-cols-2">
                 <p>
-                  Every SCM software ever built assumes something you don't have: an IT team, a long implementation runway, and a workforce that can sit through weeks of training. SANAK changes that.
+                  {t("home.brand_desc_1")}
                 </p>
                 <p>
-                  We built a system that floor workers can operate just by speaking or typing naturally. When the system is simple enough for the floor worker to use, the data becomes accurate, and the chaos stops.
+                  {t("home.brand_desc_2")}
                 </p>
               </div>
             </Reveal>
@@ -233,13 +213,13 @@ function Home() {
             <div className="md:col-span-4">
               <Reveal>
                 <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                  [ Why SANAK / 02 ]
+                  {t("home.why_eyebrow")}
                 </p>
                 <h2 className="mt-8 display-lg">
-                  Three things that change everything.
+                  {t("home.why_title")}
                 </h2>
                 <p className="mt-8 max-w-md text-[color:var(--color-graphite-300)]">
-                  Each module stands alone and composes with the others. Land where the hurt is greatest. Expand on your terms.
+                  {t("home.why_desc")}
                 </p>
               </Reveal>
             </div>
@@ -255,10 +235,10 @@ function Home() {
                       {s.n}
                     </p>
                     <h3 className="mt-6 font-display text-3xl leading-tight">
-                      {s.t}
+                      {t(s.tKey)}
                     </h3>
                     <p className="mt-4 text-sm leading-relaxed text-[color:var(--color-graphite-300)] group-hover:text-[color:var(--color-graphite-600)]">
-                      {s.d}
+                      {t(s.dKey)}
                     </p>
                   </Reveal>
                 ))}
@@ -272,11 +252,11 @@ function Home() {
       <section className="border-y border-[color:var(--color-border)]">
         <div className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
           <div className="grid grid-cols-2 gap-px bg-[color:var(--color-border-strong)] md:grid-cols-4">
-            {stats.map((s, i) => (
-              <Reveal key={s.v} delay={i * 0.06}>
+            {statsKeys.map((s, i) => (
+              <Reveal key={s.vKey} delay={i * 0.06}>
                 <div className="group relative flex h-full flex-col justify-center bg-[color:var(--color-paper)] p-8 transition-colors duration-500 hover:bg-[color:var(--color-ink)] hover:text-[color:var(--color-paper)] md:p-10">
-                  <p className="font-display text-4xl md:text-5xl transition-transform duration-500 group-hover:scale-105 origin-left">{s.v}</p>
-                  <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-graphite-400)] uppercase tracking-widest transition-colors duration-500 group-hover:text-[color:var(--color-paper)]/70">{s.l}</p>
+                  <p className="font-display text-4xl md:text-5xl transition-transform duration-500 group-hover:scale-105 origin-left">{t(s.vKey)}</p>
+                  <p className="mt-4 text-xs leading-relaxed text-[color:var(--color-graphite-400)] uppercase tracking-widest transition-colors duration-500 group-hover:text-[color:var(--color-paper)]/70">{t(s.lKey)}</p>
                 </div>
               </Reveal>
             ))}
@@ -297,27 +277,27 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                [ Case Studies / 04 ]
+                {t("home.case_eyebrow")}
               </p>
               <h2 className="mt-6 display-xl max-w-[18ch]">
-                Evidence over assertion.
+                {t("home.case_title")}
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
               <Link to="/case-studies" className="editorial-eyebrow reveal-link text-[color:var(--color-paper)]">
-                All case studies →
+                {t("home.case_link")}
               </Link>
             </Reveal>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
-            {projects.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.08}>
+            {projectKeys.map((p, i) => (
+              <Reveal key={p.titleKey} delay={i * 0.08}>
                 <article className="group flex h-full flex-col">
                   <div className="aspect-[4/5] overflow-hidden border border-[color:var(--color-paper)]/10">
                     <img
                       src={p.img}
-                      alt={p.title}
+                      alt={t(p.titleKey)}
                       loading="lazy"
                       width={1600}
                       height={2000}
@@ -325,11 +305,11 @@ function Home() {
                     />
                   </div>
                   <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-700)]">
-                    {p.eyebrow}
+                    {t(p.eyebrowKey)}
                   </p>
-                  <h3 className="mt-4 font-display text-2xl leading-tight">{p.title}</h3>
+                  <h3 className="mt-4 font-display text-2xl leading-tight">{t(p.titleKey)}</h3>
                   <p className="mt-3 text-sm text-[color:var(--color-graphite-700)]">
-                    {p.outcome}
+                    {t(p.outcomeKey)}
                   </p>
                 </article>
               </Reveal>
@@ -343,7 +323,7 @@ function Home() {
         <div className="container-edge mx-auto max-w-[1600px] pt-16 pb-8 md:pt-20 md:pb-10">
           <Reveal>
             <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-              [ Industries we serve ]
+              {t("home.industries_eyebrow")}
             </p>
           </Reveal>
         </div>
@@ -360,27 +340,27 @@ function Home() {
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <Reveal>
               <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                [ Insights / 07 ]
+                {t("home.insights_eyebrow")}
               </p>
               <h2 className="mt-6 display-xl max-w-[16ch]">
-                Thinking from the floor.
+                {t("home.insights_title")}
               </h2>
             </Reveal>
             <Reveal delay={0.1}>
               <Link to="/insights" className="editorial-eyebrow reveal-link">
-                All insights →
+                {t("home.insights_link")}
               </Link>
             </Reveal>
           </div>
 
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-8">
-            {insights.map((p, i) => (
-              <Reveal key={p.title} delay={i * 0.07}>
+            {insightKeys.map((p, i) => (
+              <Reveal key={p.titleKey} delay={i * 0.07}>
                 <article className="flex flex-col">
                   <div className="aspect-[5/3] overflow-hidden border border-[color:var(--color-border)]">
                     <img
                       src={p.img}
-                      alt={p.title}
+                      alt={t(p.titleKey)}
                       loading="lazy"
                       width={1600}
                       height={1000}
@@ -388,9 +368,9 @@ function Home() {
                     />
                   </div>
                   <p className="mt-6 editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                    {p.eyebrow} · {p.read}
+                    {t(p.eyebrowKey)} · {t(p.readKey)}
                   </p>
-                  <h3 className="mt-4 font-display text-2xl leading-tight">{p.title}</h3>
+                  <h3 className="mt-4 font-display text-2xl leading-tight">{t(p.titleKey)}</h3>
                 </article>
               </Reveal>
             ))}
@@ -402,9 +382,9 @@ function Home() {
       <section className="bg-[color:var(--color-ink)] text-[color:var(--color-paper)]">
         <div className="container-edge mx-auto flex max-w-[1600px] flex-col items-start justify-between gap-8 py-24 md:flex-row md:items-end">
           <Reveal>
-            <h2 className="display-xl max-w-[20ch]">Ready to see it in action?</h2>
+            <h2 className="display-xl max-w-[20ch]">{t("home.cta_title")}</h2>
             <p className="mt-6 max-w-md text-lg text-[color:var(--color-graphite-600)]">
-              Book a 30-minute demo. We'll show you SANAK running on real data, for an operation that looks like yours.
+              {t("home.cta_desc")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
@@ -412,7 +392,7 @@ function Home() {
               to="/contact"
               className="border border-[color:var(--color-paper)]/40 px-7 py-4 editorial-eyebrow text-[color:var(--color-paper)] transition-colors hover:bg-[color:var(--color-paper)] hover:text-[color:var(--color-ink)]"
             >
-              Book a Demo →
+              {t("home.cta_button")}
             </Link>
           </Reveal>
         </div>

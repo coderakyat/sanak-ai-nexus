@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -24,49 +25,6 @@ export const Route = createFileRoute("/faq")({
   }),
   component: FAQ,
 });
-
-const faqs = [
-  {
-    q: "How long does it take to go live?",
-    a: "For most operations, a single working day. The onboarding process covers warehouse setup, item master import from an Excel template, opening stock confirmation, user invitations, and a guided first transaction. Customers with straightforward operations — one warehouse, fewer than 200 SKUs — can be fully operational in three to four hours.",
-  },
-  {
-    q: "Do we need an IT team or technical staff?",
-    a: "No. SANAK is designed specifically for businesses that don't have dedicated IT resources. Configuration is handled by the SANAK team during onboarding. Ongoing use requires only a smartphone and an internet connection.",
-  },
-  {
-    q: "How does voice input work? What if there's background noise?",
-    a: "SANAK uses a speech-to-text engine optimised for accuracy in real-world conditions — including warehouse environments with ambient noise. The system supports both Bahasa Malaysia and English, including the natural code-switching between the two that's common in Malaysian and Singaporean workplaces. For input that requires high precision — batch numbers, expiry dates, specific quantities — the system presents an editable confirmation card before any data is committed, so users can verify and correct before confirming.",
-  },
-  {
-    q: "What happens if a team member makes a mistake?",
-    a: "SANAK requires confirmation before executing any operation that changes data. A summary card is shown first; the user must actively confirm before anything is written. All write operations create a permanent, immutable audit record. If a mistake is made, it can be corrected through a reversal entry — and both the original transaction and the correction remain in the audit history.",
-  },
-  {
-    q: "Does SANAK replace our accounting software?",
-    a: "No. SANAK is designed to complement your existing accounting system — SQL Accounting, Autocount, QuickBooks, or others — not replace it. We operate in the operational layer: receiving, inventory, outbound, delivery. We connect to your accounting system where it makes sense, and leave financial ledger management where it belongs.",
-  },
-  {
-    q: "Can we use SANAK if we have multiple warehouses?",
-    a: "Yes. SANAK supports multi-warehouse operations, with stock tracked separately per location and cross-location visibility available through queries.",
-  },
-  {
-    q: "How is our data protected?",
-    a: "Your data is completely isolated from other customers at the database level — we use strict per-tenant data isolation. All data is encrypted in transit (HTTPS/TLS 1.3) and at rest. No credentials or sensitive data are stored in our application code. We use industry-standard tools for secret management, error tracking, and infrastructure security.",
-  },
-  {
-    q: "What languages does SANAK support?",
-    a: "SANAK is fully operational in Bahasa Malaysia and English, including mixed-language input. System responses follow the language of the user's input.",
-  },
-  {
-    q: "Can field workers use SANAK without a training program?",
-    a: "This is by design. SANAK is built so that the system adapts to the user — not the other way around. Warehouse staff can perform a goods receipt on their first day by speaking naturally: \"Received from Supplier Ahmad, 50 cartons Milo, batch M2024-11, expiring March 2026.\" The system guides them through confirmation rather than requiring them to learn a workflow. In practice, most field workers are productive within minutes of their first interaction.",
-  },
-  {
-    q: "What is your pricing model?",
-    a: "SANAK is available as an annual subscription, with pricing structured around company size, user volume, and AI usage. Contact us for a proposal tailored to your operation.",
-  },
-];
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
@@ -101,30 +59,45 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 }
 
 function FAQ() {
+  const { t } = useTranslation();
+
+  const faqKeys = [
+    { qKey: "faq.q1", aKey: "faq.a1" },
+    { qKey: "faq.q2", aKey: "faq.a2" },
+    { qKey: "faq.q3", aKey: "faq.a3" },
+    { qKey: "faq.q4", aKey: "faq.a4" },
+    { qKey: "faq.q5", aKey: "faq.a5" },
+    { qKey: "faq.q6", aKey: "faq.a6" },
+    { qKey: "faq.q7", aKey: "faq.a7" },
+    { qKey: "faq.q8", aKey: "faq.a8" },
+    { qKey: "faq.q9", aKey: "faq.a9" },
+    { qKey: "faq.q10", aKey: "faq.a10" },
+  ];
+
   return (
     <SiteShell>
       <PageHeader
-        eyebrow="[ FAQ / Your questions ]"
-        title={<>Your questions, <br /> answered directly.</>}
-        intro="No marketing language. If something isn't clear after reading this, email us at hello@sanak.ai and we'll respond within one business day."
+        eyebrow={t("faq.eyebrow")}
+        title={<>{t("faq.title_1")} <br /> {t("faq.title_2")}</>}
+        intro={t("faq.intro")}
       />
 
       <section className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
         <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
           <div className="md:col-span-8 md:col-start-3">
-            {faqs.map((item, i) => (
-              <Reveal key={item.q} delay={i * 0.03}>
-                <FaqItem q={item.q} a={item.a} />
+            {faqKeys.map((item, i) => (
+              <Reveal key={item.qKey} delay={i * 0.03}>
+                <FaqItem q={t(item.qKey)} a={t(item.aKey)} />
               </Reveal>
             ))}
             <div className="border-t border-[color:var(--color-border-strong)] pt-8">
               <p className="text-[color:var(--color-graphite-400)]">
-                Have a question that isn't covered here?{" "}
+                {t("faq.more_questions")}{" "}
                 <a
                   href="mailto:hello@sanak.ai"
                   className="reveal-link text-[color:var(--color-ink)]"
                 >
-                  Email us directly →
+                  {t("faq.email_us")}
                 </a>
               </p>
             </div>

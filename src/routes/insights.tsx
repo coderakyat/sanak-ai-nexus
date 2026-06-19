@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
+import { useTranslation } from "react-i18next";
 import insight1 from "@/assets/insight-1.jpg";
 import insight2 from "@/assets/insight-2.jpg";
 import insight3 from "@/assets/insight-3.jpg";
@@ -69,12 +70,14 @@ const articles = [
 ];
 
 function Insights() {
+  const { t } = useTranslation();
+
   return (
     <SiteShell>
       <PageHeader
-        eyebrow="[ Insights / Editorial ]"
-        title={<>Thinking from <br /> the floor.</>}
-        intro="Field notes, position papers, and operating briefs from the team. Written for operators, supply chain leaders, and anyone responsible for the operating discipline of distribution."
+        eyebrow={t("insights.eyebrow")}
+        title={<>{t("insights.title_1")} <br /> {t("insights.title_2")}</>}
+        intro={t("insights.intro")}
       />
 
       <section className="container-edge mx-auto max-w-[1600px] py-20 md:py-28">
@@ -94,12 +97,12 @@ function Insights() {
             </div>
             <div className="md:col-span-5 md:pl-8">
               <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
-                Featured · {featured.eyebrow} · {featured.date}
+                {t("insights.featured_label")} · {featured.eyebrow} · {featured.date}
               </p>
               <h2 className="mt-6 display-xl transition-transform duration-500 group-hover:translate-x-1">{featured.title}</h2>
               <p className="mt-8 text-[color:var(--color-graphite-300)]">{featured.dek}</p>
               <p className="mt-10 editorial-eyebrow reveal-link inline-block transition-transform duration-500 group-hover:translate-x-2">
-                Read the paper →
+                {t("insights.read_paper")}
               </p>
             </div>
           </article>
