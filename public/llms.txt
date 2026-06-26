@@ -22,7 +22,18 @@ SANAK.AI offers five highly integrated modules that can also be adopted standalo
 Mid-market distributors (FMCG, Industrial, F&B) and warehouse operators who need operational truth and real-time inventory visibility but lack the technical infrastructure to deploy traditional software.
 
 ## Contact Information
-- **Website**: https://sanak.my.id
+- **Website**: [SANAK.AI](https://sanak.my.id)
 - **Target Region**: Malaysia, Singapore, and Southeast Asia.
 - **Email**: coderakyatofficial@gmail.com
 - **Demo**: Users can schedule a 30-minute live demonstration using real operational data.
+
+## Site Structure
+- [Home](https://sanak.my.id/)
+- [About Us](https://sanak.my.id/about)
+- [Services](https://sanak.my.id/services)
+- [Solutions](https://sanak.my.id/solutions)
+- [Case Studies](https://sanak.my.id/case-studies)
+- [Insights](https://sanak.my.id/insights)
+- [Team](https://sanak.my.id/team)
+- [FAQ](https://sanak.my.id/faq)
+- [Contact](https://sanak.my.id/contact)
