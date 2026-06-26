@@ -2,9 +2,9 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useTranslation } from "react-i18next";
-import case1 from "@/assets/case-1.jpg";
-import case2 from "@/assets/case-2.jpg";
-import case3 from "@/assets/case-3.jpg";
+import case1 from "@/assets/case-1.webp";
+import case2 from "@/assets/case-2.webp";
+import case3 from "@/assets/case-3.webp";
 
 export const Route = createFileRoute("/case-studies")({
   head: () => ({
@@ -24,6 +24,18 @@ export const Route = createFileRoute("/case-studies")({
       { property: "og:image", content: case1 },
     ],
     links: [{ rel: "canonical", href: "https://sanak.my.id/case-studies" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "SANAK.AI Case Studies",
+          description: "Real distribution and warehousing operations in Malaysia transformed by SANAK.AI.",
+          url: "https://sanak.my.id/case-studies",
+        }),
+      },
+    ],
   }),
   component: CaseStudies,
 });

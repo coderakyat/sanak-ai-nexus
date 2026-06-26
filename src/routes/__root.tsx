@@ -86,12 +86,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "SANAK.AI" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "SANAK.AI — SCM software for distributors" },
-      {
-        property: "og:description",
-        content:
-          "A modular supply chain platform built for distributors and warehousing operations.",
-      },
+      { property: "og:description", content: "A modular supply chain platform built for distributors and warehousing operations." },
+      { property: "og:image", content: "https://sanak.my.id/og-image.webp" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sanak.my.id/og-image.webp" },
       { name: "google-site-verification", content: "Y3OT643wLjG3A50XV8HnbB5wsZB9ya6TzxCaGGBb_UQ" },
     ],
     links: [

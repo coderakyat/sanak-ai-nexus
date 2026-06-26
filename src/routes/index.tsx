@@ -6,12 +6,12 @@ import { InteractiveCapabilities } from "@/components/site/InteractiveCapabiliti
 import { Marquee } from "@/components/site/Marquee";
 import heroWarehouse from "@/assets/hero-warehouse.webp";
 import brandStatement from "@/assets/brand-statement.webp";
-import case1 from "@/assets/case-1.jpg";
-import case2 from "@/assets/case-2.jpg";
-import case3 from "@/assets/case-3.jpg";
-import insight1 from "@/assets/insight-1.jpg";
-import insight2 from "@/assets/insight-2.jpg";
-import insight3 from "@/assets/insight-3.jpg";
+import case1 from "@/assets/case-1.webp";
+import case2 from "@/assets/case-2.webp";
+import case3 from "@/assets/case-3.webp";
+import insight1 from "@/assets/insight-1.webp";
+import insight2 from "@/assets/insight-2.webp";
+import insight3 from "@/assets/insight-3.webp";
 import { useTranslation } from "react-i18next";
 
 export const Route = createFileRoute("/")(({

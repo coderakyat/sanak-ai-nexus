@@ -2,10 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useTranslation } from "react-i18next";
-import insight1 from "@/assets/insight-1.jpg";
-import insight2 from "@/assets/insight-2.jpg";
-import insight3 from "@/assets/insight-3.jpg";
-import texture from "@/assets/texture-1.jpg";
+import insight1 from "@/assets/insight-1.webp";
+import insight2 from "@/assets/insight-2.webp";
+import insight3 from "@/assets/insight-3.webp";
+import texture from "@/assets/texture-1.webp";
 
 export const Route = createFileRoute("/insights")({
   head: () => ({
@@ -26,6 +26,18 @@ export const Route = createFileRoute("/insights")({
       { property: "og:image", content: insight1 },
     ],
     links: [{ rel: "canonical", href: "https://sanak.my.id/insights" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Blog",
+          name: "SANAK.AI Insights",
+          description: "Field notes, position papers, and operating briefs on supply chain.",
+          url: "https://sanak.my.id/insights",
+        }),
+      },
+    ],
   }),
   component: Insights,
 });

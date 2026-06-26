@@ -1,0 +1,28 @@
+# SANAK.AI - Conversational SCM Platform
+
+## About Us
+SANAK.AI is a conversational, mobile-first Supply Chain Management (SCM) platform built specifically for mid-market distributors and warehouse operators in Southeast Asia (primarily Malaysia and Singapore). We provide enterprise-grade operational control without the need for a dedicated IT team or months-long implementation cycles. 
+
+Our core philosophy: "Intelligence belongs in the system, not in people's heads." We believe that an SCM should be as easy to use as sending a text message or speaking naturally.
+
+## Value Proposition
+- **Voice-First Interface**: Field workers can execute operations (e.g., querying stock, receiving goods) by speaking or typing naturally in English or Bahasa Malaysia (including natural code-switching).
+- **No IT Team Required**: Designed for operations that have outgrown Excel and WhatsApp but are too lean for heavy enterprise ERPs like SAP. Full onboarding can be completed in as little as one business day.
+- **100% Audit Trail**: Every movement is tracked immutably. Know exactly who moved what, when, and for which order.
+
+## Core Modules (Capabilities)
+SANAK.AI offers five highly integrated modules that can also be adopted standalone based on the most critical pain points:
+1. **Inventory Management**: Real-time stock visibility, GRN (Goods Receipt Note) logging via voice/text, automated FEFO (First Expired, First Out) enforcement, and expiration alerts.
+2. **Procurement Management**: Purchase Orders (PO), supplier management, and 3-way matching (PO, receipt, invoice).
+3. **Order Management**: Sales Order creation, real-time ATP (Available-to-Promise) checking, and backorder management.
+4. **Outbound Logistics & Delivery**: Route planning, driver briefings, and Electronic Proof of Delivery (ePOD) with customer signatures.
+5. **Field Sales Execution**: Real-time stock queries and on-site order creation directly from the customer's location without needing to call the warehouse.
+
+## Target Audience
+Mid-market distributors (FMCG, Industrial, F&B) and warehouse operators who need operational truth and real-time inventory visibility but lack the technical infrastructure to deploy traditional software.
+
+## Contact Information
+- **Website**: https://sanak.my.id
+- **Target Region**: Malaysia, Singapore, and Southeast Asia.
+- **Email**: coderakyatofficial@gmail.com
+- **Demo**: Users can schedule a 30-minute live demonstration using real operational data.

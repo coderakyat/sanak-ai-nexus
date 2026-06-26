@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useTranslation } from "react-i18next";
-import aboutHero from "@/assets/about-hero.jpg";
-import texture from "@/assets/texture-1.jpg";
+import aboutHero from "@/assets/about-hero.webp";
+import texture from "@/assets/texture-1.webp";
 
 export const Route = createFileRoute("/about")({
   head: () => ({

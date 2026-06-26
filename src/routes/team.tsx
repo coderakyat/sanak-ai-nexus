@@ -2,8 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useTranslation } from "react-i18next";
-import imgCeo from "@/assets/ceo.jpeg";
-import imgCpo from "@/assets/cpo.jpeg";
+import imgCeo from "@/assets/ceo.webp";
+import imgCpo from "@/assets/cpo.webp";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
