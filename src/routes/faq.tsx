@@ -3,6 +3,20 @@ import { SiteShell, PageHeader } from "@/components/site/SiteShell";
 import { Reveal } from "@/components/site/Reveal";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import enLocales from "../locales/en.json";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((i) => ({
+    "@type": "Question",
+    name: (enLocales.faq as any)[`q${i}`],
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: (enLocales.faq as any)[`a${i}`],
+    },
+  })),
+};
 
 export const Route = createFileRoute("/faq")({
   head: () => ({
@@ -22,6 +36,12 @@ export const Route = createFileRoute("/faq")({
       { property: "og:url", content: "https://sanak.my.id/faq" },
     ],
     links: [{ rel: "canonical", href: "https://sanak.my.id/faq" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(faqSchema),
+      },
+    ],
   }),
   component: FAQ,
 });
