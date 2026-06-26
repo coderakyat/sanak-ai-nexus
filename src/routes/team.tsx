@@ -20,9 +20,9 @@ export const Route = createFileRoute("/team")({
         content:
           "Operators and engineers in equal measure. Meet the people behind the platform.",
       },
-      { property: "og:url", content: "/team" },
+      { property: "og:url", content: "https://sanak.my.id/team" },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/team" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/team" }],
   }),
   component: Team,
 });

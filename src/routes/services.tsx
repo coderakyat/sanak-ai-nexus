@@ -18,9 +18,9 @@ export const Route = createFileRoute("/services")({
         content:
           "Five modules. One conversational interface. Your team learns one way of working, and it applies everywhere.",
       },
-      { property: "og:url", content: "/services" },
+      { property: "og:url", content: "https://sanak.my.id/services" },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/services" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/services" }],
   }),
   component: Services,
 });
@@ -105,8 +105,8 @@ function Services() {
                         key={bKey}
                         className="group/bullet flex items-start gap-4 border-t border-[color:var(--color-border)] pt-4 text-sm"
                       >
-                        <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm bg-[color:var(--color-border-strong)] transition-colors duration-300 group-hover/bullet:bg-[color:var(--color-ink)]">
-                           <span className="font-mono text-[10px] text-[color:var(--color-paper)] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100">✓</span>
+                        <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[color:var(--color-graphite-400)] transition-colors duration-300 group-hover/bullet:border-[color:var(--color-ink)] group-hover/bullet:bg-[color:var(--color-ink)] text-[color:var(--color-ink)]">
+                           <span className="font-mono text-[10px] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100 group-hover/bullet:text-[color:var(--color-paper)]">✓</span>
                         </div>
                         <span className="transition-colors duration-300 group-hover/bullet:text-[color:var(--color-ink)] text-[color:var(--color-graphite-300)]">{t(bKey)}</span>
                       </li>

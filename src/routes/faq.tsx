@@ -19,9 +19,9 @@ export const Route = createFileRoute("/faq")({
         content:
           "Your questions, answered directly. No marketing language.",
       },
-      { property: "og:url", content: "/faq" },
+      { property: "og:url", content: "https://sanak.my.id/faq" },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/faq" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/faq" }],
   }),
   component: FAQ,
 });
@@ -94,7 +94,7 @@ function FAQ() {
               <p className="text-[color:var(--color-graphite-400)]">
                 {t("faq.more_questions")}{" "}
                 <a
-                  href="mailto:hello@sanak.ai"
+                  href="mailto:coderakyatofficial@gmail.com"
                   className="reveal-link text-[color:var(--color-ink)]"
                 >
                   {t("faq.email_us")}

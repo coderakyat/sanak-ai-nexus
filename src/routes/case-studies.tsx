@@ -20,10 +20,10 @@ export const Route = createFileRoute("/case-studies")({
         property: "og:description",
         content: "Evidence over assertion. Three operations, three operating outcomes.",
       },
-      { property: "og:url", content: "/case-studies" },
+      { property: "og:url", content: "https://sanak.my.id/case-studies" },
       { property: "og:image", content: case1 },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/case-studies" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/case-studies" }],
   }),
   component: CaseStudies,
 });
@@ -149,8 +149,8 @@ function CaseStudies() {
                       <ul className="space-y-4">
                         {c.changed.map((item) => (
                           <li key={item} className="group/bullet flex items-start gap-4 text-[color:var(--color-graphite-200)]">
-                            <div className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm bg-[color:var(--color-border-strong)] transition-colors duration-300 group-hover/bullet:bg-[color:var(--color-ink)]">
-                               <span className="font-mono text-[10px] text-[color:var(--color-paper)] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100">✓</span>
+                            <div className="mt-1.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[color:var(--color-graphite-400)] transition-colors duration-300 group-hover/bullet:border-[color:var(--color-ink)] group-hover/bullet:bg-[color:var(--color-ink)] text-[color:var(--color-ink)]">
+                               <span className="font-mono text-[10px] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100 group-hover/bullet:text-[color:var(--color-paper)]">✓</span>
                             </div>
                             <span className="text-lg leading-relaxed transition-colors duration-300 group-hover/bullet:text-[color:var(--color-ink)] text-[color:var(--color-graphite-300)]">{item}</span>
                           </li>

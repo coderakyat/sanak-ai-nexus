@@ -44,8 +44,8 @@ export function SiteFooter() {
                 {t("footer.contact")}
               </p>
               <ul className="mt-5 space-y-3 text-sm text-[color:var(--color-graphite-600)]">
-                <li><a href="mailto:hello@sanak.ai" className="hover:text-[color:var(--color-paper)] transition-colors">hello@sanak.ai</a></li>
-                <li className="text-[color:var(--color-graphite-700)]">Malaysia · Singapore</li>
+                <li><a href="mailto:coderakyatofficial@gmail.com" className="hover:text-[color:var(--color-paper)] transition-colors">coderakyatofficial@gmail.com</a></li>
+                <li className="text-[color:var(--color-graphite-700)]">Indonesia</li>
               </ul>
             </div>
           </div>
@@ -58,9 +58,9 @@ export function SiteFooter() {
 
         {/* MASSIVE BRAND WATERMARK */}
         <div className="mt-16 w-full overflow-hidden select-none pointer-events-none" aria-hidden="true">
-          <h1 className="text-[15vw] leading-none font-display text-[color:var(--color-paper)]/5 text-center tracking-tighter">
+          <div className="text-[15vw] leading-none font-display text-[color:var(--color-paper)]/5 text-center tracking-tighter">
             SANAK.AI
-          </h1>
+          </div>
         </div>
       </div>
     </footer>

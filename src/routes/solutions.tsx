@@ -23,9 +23,9 @@ export const Route = createFileRoute("/solutions")({
         content:
           "Five operational challenges. Five direct solutions. Map your pain to the module that releases the most value first.",
       },
-      { property: "og:url", content: "/solutions" },
+      { property: "og:url", content: "https://sanak.my.id/solutions" },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/solutions" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/solutions" }],
   }),
   component: Solutions,
 });

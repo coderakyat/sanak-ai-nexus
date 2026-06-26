@@ -22,10 +22,10 @@ export const Route = createFileRoute("/insights")({
         content:
           "Thinking from the floor. Position papers and field notes on the operating discipline of distribution.",
       },
-      { property: "og:url", content: "/insights" },
+      { property: "og:url", content: "https://sanak.my.id/insights" },
       { property: "og:image", content: insight1 },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/insights" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/insights" }],
   }),
   component: Insights,
 });

@@ -107,7 +107,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           name: "SANAK.AI",
           description:
             "SCM software for distributors and warehousing operations.",
-          url: "/",
+          url: "https://sanak.my.id/",
         }),
       },
     ],

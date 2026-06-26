@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sanakai.vercel.app/sitemap.xml
+Sitemap: https://sanak.my.id/sitemap.xml

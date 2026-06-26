@@ -19,9 +19,9 @@ export const Route = createFileRoute("/contact")({
         content:
           "Request a demo or speak with us about your distribution operation.",
       },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://sanak.my.id/contact" },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/contact" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/contact" }],
   }),
   component: Contact,
 });
@@ -41,7 +41,7 @@ function Contact() {
     const subject = `New enquiry — ${form.company || form.name || "SANAK.AI"}`;
     const body =
       `Name: ${form.name}\nCompany: ${form.company}\nRole: ${form.role}\nEmail: ${form.email}\n\n${form.message}`;
-    window.location.href = `mailto:hello@sanak.ai?subject=${encodeURIComponent(
+    window.location.href = `mailto:coderakyatofficial@gmail.com?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
   }
@@ -93,8 +93,8 @@ function Contact() {
               <ul className="mt-6 space-y-3">
                 {demoItems.map((key) => (
                   <li key={key} className="group/bullet flex items-start gap-3 text-sm">
-                    <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm bg-[color:var(--color-border-strong)] transition-colors duration-300 group-hover/bullet:bg-[color:var(--color-ink)]">
-                       <span className="font-mono text-[10px] text-[color:var(--color-paper)] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100">✓</span>
+                    <div className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-sm border border-[color:var(--color-graphite-400)] transition-colors duration-300 group-hover/bullet:border-[color:var(--color-ink)] group-hover/bullet:bg-[color:var(--color-ink)] text-[color:var(--color-ink)]">
+                       <span className="font-mono text-[10px] opacity-0 transition-opacity duration-300 group-hover/bullet:opacity-100 group-hover/bullet:text-[color:var(--color-paper)]">✓</span>
                     </div>
                     <span className="transition-colors duration-300 group-hover/bullet:text-[color:var(--color-ink)] text-[color:var(--color-graphite-400)]">{t(key)}</span>
                   </li>
@@ -106,10 +106,10 @@ function Contact() {
                 {t("contact.email_label")}
               </p>
               <a
-                href="mailto:hello@sanak.ai"
+                href="mailto:coderakyatofficial@gmail.com"
                 className="mt-3 inline-block font-display text-2xl reveal-link md:text-3xl"
               >
-                hello@sanak.ai
+                coderakyatofficial@gmail.com
               </a>
             </div>
 
@@ -118,17 +118,17 @@ function Contact() {
                 {t("contact.press_label")}
               </p>
               <a
-                href="mailto:press@sanak.ai"
+                href="mailto:coderakyatofficial@gmail.com"
                 className="mt-3 inline-block font-display text-2xl reveal-link md:text-3xl"
               >
-                press@sanak.ai
+                coderakyatofficial@gmail.com
               </a>
             </div>
             <div className="border-t border-[color:var(--color-border-strong)] pt-6">
               <p className="editorial-eyebrow text-[color:var(--color-graphite-400)]">
                 {t("contact.location_label")}
               </p>
-              <p className="mt-3 font-display text-2xl">Malaysia · Singapore</p>
+              <p className="mt-3 font-display text-2xl">Indonesia</p>
             </div>
           </div>
         </Reveal>
@@ -190,7 +190,7 @@ function Contact() {
             <div className="bg-[color:var(--color-paper)] p-6 sm:col-span-2">
               <button
                 type="submit"
-                className="w-full bg-[color:var(--color-ink)] px-8 py-5 editorial-eyebrow text-[color:var(--color-paper)] transition-all duration-500 hover:bg-[color:var(--color-graphite-600)] hover:scale-[1.02]]"
+                className="w-full bg-[color:var(--color-ink)] px-8 py-5 editorial-eyebrow text-[color:var(--color-paper)] transition-all duration-500 hover:bg-[color:var(--color-graphite-600)] hover:scale-[1.02]"
               >
                 {t("contact.submit_btn")}
               </button>
@@ -207,8 +207,8 @@ function Contact() {
 
 function FieldShell({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <label className="group flex flex-col gap-3 bg-[color:var(--color-paper)] p-6 transition-colors duration-300 focus-within:bg-[color:var(--color-paper-2)]/50 hover:bg-[color:var(--color-paper-2)]/30">
-      <span className="editorial-eyebrow text-[color:var(--color-graphite-400)] transition-colors duration-300 group-focus-within:text-[color:var(--color-ink)] group-hover:text-[color:var(--color-graphite-600)]">
+    <label className="group flex flex-col gap-3 bg-[color:var(--color-paper)] p-6 transition-all duration-300 focus-within:bg-[color:var(--color-paper-2)] hover:bg-[color:var(--color-paper-2)]/50 focus-within:shadow-[inset_4px_0_0_0_var(--color-ink)]">
+      <span className="editorial-eyebrow text-[color:var(--color-graphite-400)] transition-colors duration-300 group-focus-within:text-[color:var(--color-ink)] group-focus-within:font-semibold group-hover:text-[color:var(--color-graphite-600)]">
         {label}
       </span>
       {children}

@@ -29,11 +29,11 @@ export const Route = createFileRoute("/")(({
         content:
           "A conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://sanak.my.id/" },
       { property: "og:image", content: heroWarehouse },
       { name: "twitter:image", content: heroWarehouse },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/" }],
   }),
   component: Home,
 }));

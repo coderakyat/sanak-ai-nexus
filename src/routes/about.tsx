@@ -20,10 +20,10 @@ export const Route = createFileRoute("/about")({
         content:
           "A product company building the SCM platform distributors and warehousing operations in Southeast Asia have been quietly waiting for.",
       },
-      { property: "og:url", content: "/about" },
+      { property: "og:url", content: "https://sanak.my.id/about" },
       { property: "og:image", content: aboutHero },
     ],
-    links: [{ rel: "canonical", href: "https://sanakai.vercel.app/about" }],
+    links: [{ rel: "canonical", href: "https://sanak.my.id/about" }],
   }),
   component: About,
 });
