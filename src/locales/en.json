@@ -27,8 +27,8 @@
   },
   "home": {
     "eyebrow": "[ SCM software for Mid-Market Distributors ]",
-    "hero_title": "ERP-grade systems, <br /> as easy as using WhatsApp. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">Without the months-long implementation drama.</span>",
-    "hero_subtitle": "The conversational SCM platform built for mid-market distributors and warehouse operators across Southeast Asia. Ask it anything. Tell it what you're doing. It handles the rest — in real time, from your phone.",
+    "hero_title": "Your Supply Chain, Spoken Into Existence. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">ERP-grade systems, as easy as using WhatsApp.</span>",
+    "hero_subtitle": "Eliminate warehouse stock chaos without the months-long implementation drama, and without burdening your internal team. Instant execution, accurate data.",
     "request_demo": "Book a Demo",
     "view_capabilities": "See How It Works",
     "capabilities_eyebrow": "[ Capabilities ]",

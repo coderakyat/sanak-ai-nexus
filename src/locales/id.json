@@ -27,8 +27,8 @@
   },
   "home": {
     "eyebrow": "[ Software SCM untuk Distributor Menengah ]",
-    "hero_title": "Sistem sekelas ERP, <br /> semudah menggunakan WhatsApp. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">Tanpa drama implementasi berbulan-bulan.</span>",
-    "hero_subtitle": "Platform SCM berbasis percakapan yang dibangun untuk distributor menengah dan operator gudang di seluruh Asia Tenggara. Tanyakan apa saja. Katakan apa yang sedang Anda kerjakan. Sistem akan menangani sisanya — secara real-time, langsung dari ponsel Anda.",
+    "hero_title": "Rantai Pasok Anda, Digerakkan Lewat Suara. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">Sistem sekelas ERP, semudah menggunakan WhatsApp.</span>",
+    "hero_subtitle": "Hilangkan kekacauan stok gudang tanpa drama implementasi berbulan-bulan, dan tanpa membebani tim internal Anda. Eksekusi instan, data akurat.",
     "request_demo": "Jadwalkan Demo",
     "view_capabilities": "Lihat Cara Kerjanya",
     "capabilities_eyebrow": "[ Kapabilitas ]",

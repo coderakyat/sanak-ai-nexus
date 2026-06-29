@@ -27,8 +27,8 @@
   },
   "home": {
     "eyebrow": "[ Software SCM untuk Pengedar Sederhana ]",
-    "hero_title": "Sistem bertaraf ERP, <br /> semudah menggunakan WhatsApp. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">Tanpa drama pelaksanaan berbulan-bulan.</span>",
-    "hero_subtitle": "Platform SCM berasaskan perbualan yang dibina untuk pengedar skala sederhana dan pengendali gudang di seluruh Asia Tenggara. Tanya apa sahaja. Beritahu apa yang sedang anda lakukan. Sistem akan menguruskan selebihnya — secara real-time, terus dari telefon anda.",
+    "hero_title": "Rantaian Bekalan Anda, Digerakkan Melalui Suara. <br /> <span className=\"text-[color:var(--color-graphite-700)]\">Sistem bertaraf ERP, semudah menggunakan WhatsApp.</span>",
+    "hero_subtitle": "Hapuskan huru-hara stok gudang tanpa drama pelaksanaan berbulan-bulan, dan tanpa membebankan pasukan dalaman anda. Pelaksanaan segera, data tepat.",
     "request_demo": "Jadualkan Demo",
     "view_capabilities": "Lihat Cara Ia Berfungsi",
     "capabilities_eyebrow": "[ Keupayaan ]",
